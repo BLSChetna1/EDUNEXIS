@@ -62,12 +62,73 @@
   letter-spacing: 0.05em;
   text-transform: uppercase;
 }
+.voice-tutor-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
 
 .navbar-status-badge {
   display: flex;
   align-items: center;
+.text-button {
+  padding: 0.35rem 0;
+  border: 0;
+  background: transparent;
+  color: var(--accent-secondary);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+.text-button:hover {
+  color: var(--text-primary);
+  text-decoration: underline;
+}
+.voice-tutor-stage {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-top: 2rem;
+  padding: 1.25rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  background: rgba(10, 14, 26, 0.3);
+}
+.voice-orb {
+  display: grid;
+  flex: 0 0 72px;
+  place-items: center;
+  width: 72px;
+  height: 72px;
+  border: 1px solid var(--border-glow);
+  border-radius: 50%;
+  background: var(--accent-gradient);
+  box-shadow: 0 0 24px rgba(99, 102, 241, 0.25);
+}
+.voice-orb-icon {
+  color: #fff;
+  font-size: 1.7rem;
+  line-height: 1;
+}
+.voice-orb-listening {
+  animation: voice-pulse 1.4s ease-in-out infinite;
+  background: linear-gradient(135deg, #ef4444, #f97316);
+  box-shadow: 0 0 0 10px rgba(239, 68, 68, 0.1), 0 0 30px rgba(239, 68, 68, 0.35);
+}
+.voice-orb-processing {
+  animation: voice-think 1.5s ease-in-out infinite;
+}
+.voice-orb-speaking {
+  animation: voice-speak 0.8s ease-in-out infinite alternate;
+  background: linear-gradient(135deg, #06b6d4, #10b981);
+}
+.voice-stage-copy {
+  min-width: 0;
+}
   gap: 0.5rem;
-  background: rgba(16, 185, 129, 0.1);
+  margin: 0;
   border: 1px solid rgba(16, 185, 129, 0.25);
   color: #34d399;
   padding: 0.35rem 0.85rem;
@@ -75,13 +136,44 @@
   font-size: 0.8rem;
   font-weight: 600;
 }
+.voice-hint {
+  margin-top: 0.25rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
 
 .status-dot {
   width: 7px;
   height: 7px;
+.voice-button-stop {
+  border-color: rgba(248, 113, 113, 0.5);
+  background: rgba(239, 68, 68, 0.16);
+  color: #fecaca;
+}
+.microphone-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 1.2rem;
+  height: 1.2rem;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  font-size: 0.55rem;
+}
   border-radius: 50%;
   background-color: #10b981;
   box-shadow: 0 0 10px #10b981;
+@keyframes voice-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+@keyframes voice-think {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(8deg); }
+}
+@keyframes voice-speak {
+  from { transform: scale(1); }
+  to { transform: scale(1.06); }
+}
 }
 
 /* Home / Hero Section */
@@ -227,6 +319,99 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
+}
+
+.voice-tutor {
+  margin-top: 5rem;
+  padding: 2rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-glow);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-glow);
+}
+
+.voice-tutor-copy {
+  max-width: 680px;
+}
+
+.voice-tutor-copy p {
+  color: var(--text-secondary);
+  margin-top: 0.75rem;
+}
+
+.voice-tutor-controls {
+  display: flex;
+  align-items: end;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.voice-tutor-controls label {
+  width: 100%;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.voice-tutor-controls select {
+  min-height: 46px;
+  padding: 0.7rem 2rem 0.7rem 0.9rem;
+  color: var(--text-primary);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+}
+
+.voice-button {
+  border: 0;
+}
+
+.voice-button:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+.voice-status {
+  margin-top: 1.25rem;
+  color: var(--accent-secondary);
+  font-weight: 700;
+}
+
+.voice-status-error,
+.voice-error {
+  color: #fca5a5;
+}
+
+.voice-result {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: rgba(10, 14, 26, 0.45);
+  border-left: 3px solid var(--accent-secondary);
+  border-radius: var(--radius-sm);
+}
+
+.voice-result-label {
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.voice-result p {
+  margin-top: 0.35rem;
+  color: var(--text-primary);
+}
+
+.voice-response {
+  border-left-color: var(--accent-primary);
+}
+
+.voice-error {
+  margin-top: 1rem;
 }
 
 .module-card {

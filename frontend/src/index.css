@@ -56,3 +56,36 @@ a {
   color: inherit;
   text-decoration: none;
 }
+button,
+select {
+  font-family: inherit;
+}
+button:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--accent-secondary);
+  outline-offset: 3px;
+}
+@media (max-width: 640px) {
+  .voice-tutor {
+    padding: 1.25rem;
+  }
+  .voice-tutor-header,
+  .voice-tutor-stage {
+    align-items: flex-start;
+  }
+  .voice-tutor-header {
+    flex-direction: column;
+  }
+  .voice-tutor-stage {
+    gap: 0.9rem;
+  }
+  .voice-orb {
+    flex-basis: 56px;
+    width: 56px;
+    height: 56px;
+  }
+  .voice-tutor-controls .btn,
+  .voice-tutor-controls select {
+    width: 100%;
+  }
+}

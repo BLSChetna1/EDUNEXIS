@@ -1,5 +1,6 @@
 import React from "react";
 import { APP_NAME, APP_TAGLINE, SIH_EDITION } from "../utils/constants";
+import VoiceTutor from "../components/VoiceTutor";
 
 export function Home() {
   const modules = [
@@ -100,6 +101,8 @@ export function Home() {
           ))}
         </div>
       </section>
+
+      <VoiceTutor />
     </main>
   );
 }

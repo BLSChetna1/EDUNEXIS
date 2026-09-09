@@ -19,6 +19,7 @@ async def speech_to_text_endpoint(request: SpeechToTextRequest) -> SpeechToTextR
     result = await SpeechService.speech_to_text(
         audio_base64=request.audio_base64,
         lang=request.language_code or "auto",
+        audio_format=request.audio_format or "wav",
     )
     return SpeechToTextResponse(**result)
 
@@ -31,5 +32,6 @@ async def text_to_speech_endpoint(request: TextToSpeechRequest) -> TextToSpeechR
     result = await SpeechService.text_to_speech(
         text=request.text,
         target_lang=request.target_language,
+        voice_gender=request.voice_gender or "female",
     )
     return TextToSpeechResponse(**result)

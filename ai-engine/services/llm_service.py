@@ -40,8 +40,20 @@ class MockLLMService(BaseLLMService):
         temperature: float = 0.7,
         max_tokens: int = 1024,
     ) -> Dict[str, Any]:
+        prompt_lower = prompt.lower()
+        if "stack" in prompt_lower and "queue" in prompt_lower:
+            response_text = (
+                "A stack is last-in, first-out: the newest item is removed first. "
+                "A queue is first-in, first-out: the oldest item is removed first. "
+                "Think of a stack of plates versus students waiting in a line."
+            )
+        else:
+            response_text = (
+                "Here is a simple way to think about it: start with the main idea, "
+                "then connect it to a familiar everyday example."
+            )
         return {
-            "text": f"[AI Response Placeholder] Concept received: '{prompt[:60]}...'. Scaffolding content successfully generated.",
+            "text": response_text,
             "model": self.model_name,
             "finish_reason": "stop",
             "usage": {
