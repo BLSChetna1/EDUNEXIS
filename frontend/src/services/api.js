@@ -12,13 +12,20 @@ class ApiService {
 
   async request(endpoint, options = {}) {
     const url = `${this.baseUrl}${endpoint}`;
+    const { timeoutMs, ...fetchOptions } = options;
+    const controller = timeoutMs ? new AbortController() : null;
+    const timeoutId = timeoutMs ? setTimeout(() => controller.abort(), timeoutMs) : null;
     const headers = {
       "Content-Type": "application/json",
-      ...(options.headers || {}),
+      ...(fetchOptions.headers || {}),
     };
 
     try {
-      const response = await fetch(url, { ...options, headers });
+      const response = await fetch(url, {
+        ...fetchOptions,
+        headers,
+        ...(controller ? { signal: controller.signal } : {}),
+      });
       if (!response.ok) {
         const errorData = await response.json().catch(() => ({}));
         throw new Error(errorData.detail || `Request failed with status ${response.status}`);
@@ -26,7 +33,12 @@ class ApiService {
       return await response.json();
     } catch (error) {
       console.error(`API Error [${endpoint}]:`, error);
+      if (error.name === "AbortError") {
+        throw new Error("The tutor took too long to respond. Please try again.");
+      }
       throw error;
+    } finally {
+      if (timeoutId) clearTimeout(timeoutId);
     }
   }
 
@@ -39,6 +51,7 @@ class ApiService {
   sendChatMessage(payload) {
     return this.request(API_ENDPOINTS.CHAT, {
       method: "POST",
+      timeoutMs: 20000,
       body: JSON.stringify(payload),
     });
   }
@@ -60,18 +73,26 @@ class ApiService {
   }
 
   // Speech-to-Text
-  speechToText(audioData, language) {
+  speechToText(audioBase64, language = "auto", audioFormat = "wav") {
     return this.request(API_ENDPOINTS.SPEECH_TO_TEXT, {
       method: "POST",
-      body: JSON.stringify({ audio_data: audioData, language }),
+      body: JSON.stringify({
+        audio_base64: audioBase64,
+        audio_format: audioFormat,
+        language_code: language,
+      }),
     });
   }
 
   // Text-to-Speech
-  textToSpeech(text, targetLanguage, voice = "default") {
+  textToSpeech(text, targetLanguage, voiceGender = "female") {
     return this.request(API_ENDPOINTS.TEXT_TO_SPEECH, {
       method: "POST",
-      body: JSON.stringify({ text, target_language: targetLanguage, voice }),
+      body: JSON.stringify({
+        text,
+        target_language: targetLanguage,
+        voice_gender: voiceGender,
+      }),
     });
   }
 }

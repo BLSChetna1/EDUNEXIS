@@ -26,6 +26,7 @@ class Settings(BaseSettings):
     # AI & NLP Service Configuration
     LLM_API_KEY: str = ""
     LLM_MODEL: str = "gemini-1.5-flash"
+    LLM_TIMEOUT_SECONDS: float = 15.0
 
     # Multilingual & Speech APIs
     TRANSLATION_API_KEY: str = ""

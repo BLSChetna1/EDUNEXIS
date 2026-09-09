@@ -27,6 +27,14 @@ class ChatRequest(BaseModel):
     pedagogy_level: Optional[str] = Field("standard", description="standard, beginner, intermediate, or advanced")
     session_id: Optional[str] = Field(None, description="Session tracking ID")
 
+    @field_validator("message")
+    @classmethod
+    def message_must_contain_text(cls, value: str) -> str:
+        normalized = value.strip()
+        if not normalized:
+            raise ValueError("message must contain non-whitespace text")
+        return normalized
+
 
 class ChatResponse(BaseModel):
     reply: str
@@ -42,8 +50,11 @@ class LanguageDetectRequest(BaseModel):
 
 class LanguageDetectResponse(BaseModel):
     language: str
+    language_code: Optional[str] = None
+    regional_variant: Optional[str] = None
     confidence: float
     is_supported: bool
+    support_status: Optional[str] = None
 
 
 # Supported Translation Languages (Member 3 - EDUNEXIS)
@@ -134,7 +145,7 @@ class TranslateResponse(BaseModel):
 
 # --- Speech Schemas ---
 class SpeechToTextRequest(BaseModel):
-    audio_base64: str = Field(..., description="Base64 encoded audio payload")
+    audio_base64: str = Field(..., min_length=1, description="Base64 encoded audio payload")
     audio_format: Optional[str] = Field("wav", description="Audio format (e.g. wav, mp3)")
     language_code: Optional[str] = Field("auto", description="Expected language code or 'auto'")
 

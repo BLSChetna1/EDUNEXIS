@@ -50,3 +50,14 @@ async def test_mock_llm_service():
     assert "text" in response
     assert "usage" in response
     assert response["finish_reason"] == "stop"
+
+
+@pytest.mark.asyncio
+async def test_mock_llm_service_returns_educational_voice_response():
+    service = get_llm_service("mock")
+    response = await service.generate_response(
+        "What is the difference between stack and queue?"
+    )
+
+    assert "last-in, first-out" in response["text"]
+    assert "first-in, first-out" in response["text"]
