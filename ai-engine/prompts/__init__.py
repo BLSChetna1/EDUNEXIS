@@ -1,0 +1,12 @@
+"""Prompt engineering and template library for EDUNEXIS AI Engine."""
+from .templates import (
+    SYSTEM_TUTOR_PROMPT,
+    SIMPLIFICATION_PROMPT_TEMPLATE,
+    MULTILINGUAL_EXPLANATION_PROMPT,
+)
+
+__all__ = [
+    "SYSTEM_TUTOR_PROMPT",
+    "SIMPLIFICATION_PROMPT_TEMPLATE",
+    "MULTILINGUAL_EXPLANATION_PROMPT",
+]
