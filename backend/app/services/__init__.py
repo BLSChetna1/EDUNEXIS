@@ -20,17 +20,7 @@ class BackendAiService:
         }
 
 
-class TranslationService:
-    """Service bridge to Machine Translation APIs."""
-
-    @staticmethod
-    async def translate(text: str, source_lang: str, target_lang: str) -> Dict[str, str]:
-        """Placeholder translation method."""
-        return {
-            "translated_text": f"[Translated to {target_lang}]: {text}",
-            "source_language": source_lang if source_lang != "auto" else "en",
-            "target_language": target_lang,
-        }
+from app.services.translation_service import TranslationService, TranslationError
 
 
 class SpeechService:

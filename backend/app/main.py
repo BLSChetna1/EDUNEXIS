@@ -68,6 +68,11 @@ async def health_check() -> HealthResponse:
 # Register API v1 routes
 app.include_router(api_router, prefix=settings.API_V1_STR)
 
+# Register translation router at /api prefix (supports direct POST /api/translate)
+from app.api.routes.translate import router as translate_router
+app.include_router(translate_router, prefix="/api")
+
+
 
 if __name__ == "__main__":
     import uvicorn

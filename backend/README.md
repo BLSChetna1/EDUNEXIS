@@ -72,3 +72,48 @@ To add a new endpoint (e.g., student progress tracking):
 # From the repository root or backend directory:
 pytest tests/backend/
 ```
+
+---
+
+## 🌐 Member 3: Translation Module (`POST /api/translate`)
+
+### Supported Languages
+| Code | Language | Script |
+|---|---|---|
+| `en` | English | Latin |
+| `te` | Telugu | Telugu |
+| `hi` | Hindi | Devanagari |
+| `ta` | Tamil | Tamil |
+| `kn` | Kannada | Kannada |
+| `ml` | Malayalam | Malayalam |
+| `bn` | Bengali | Bengali |
+| `mr` | Marathi | Devanagari |
+| `gu` | Gujarati | Gujarati |
+
+### Endpoints
+- Primary: `POST /api/translate`
+- Prefixed (for React frontend): `POST /api/v1/translate`
+
+### Request Body
+```json
+{
+  "text": "Hello, how are you?",
+  "source_language": "en",
+  "target_language": "te"
+}
+```
+
+### Response Body (`200 OK`)
+```json
+{
+  "translated_text": "హలో, మీరు ఎలా ఉన్నారు?",
+  "source_language": "en",
+  "target_language": "te"
+}
+```
+
+### Validation Rules
+- `text`: Non-empty, non-whitespace string (returns `422` if empty).
+- `source_language`: Must be one of the supported codes or `"auto"`.
+- `target_language`: Must be one of the 9 supported codes (returns `422` if unsupported or missing).
+

@@ -29,6 +29,9 @@ class Settings(BaseSettings):
 
     # Multilingual & Speech APIs
     TRANSLATION_API_KEY: str = ""
+    TRANSLATION_SUPPORTED_LANGUAGES: List[str] = [
+        "en", "te", "hi", "ta", "kn", "ml", "bn", "mr", "gu"
+    ]
     SPEECH_API_KEY: str = ""
 
     # Pydantic Settings Configuration
