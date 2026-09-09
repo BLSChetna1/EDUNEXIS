@@ -1,0 +1,54 @@
+{
+  "class": "Class 1",
+  "subject": "Mathematics",
+  "topic": "Numbers 1-10",
+  "instructions": "Read each question carefully. Count the objects or find the correct number, then write or choose your answer.",
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Count the apples below: 🍎 🍎 🍎 🍎. How many apples are there?",
+      "question_type": "counting",
+      "options": ["2", "3", "4", "5"],
+      "correct_answer": "4",
+      "explanation": "Counting one by one: 1, 2, 3, 4 apples."
+    },
+    {
+      "question_number": 2,
+      "question": "Which number comes right after 6?",
+      "question_type": "multiple_choice",
+      "options": ["5", "7", "8", "9"],
+      "correct_answer": "7",
+      "explanation": "In counting sequence 1 to 10, the number 7 comes after 6."
+    },
+    {
+      "question_number": 3,
+      "question": "Count the stars: ⭐ ⭐ ⭐ ⭐ ⭐ ⭐ ⭐. Write the total number in the box.",
+      "question_type": "fill_in_the_blank",
+      "correct_answer": "7",
+      "explanation": "There are 7 stars in total."
+    },
+    {
+      "question_number": 4,
+      "question": "Which number is smaller: 3 or 8?",
+      "question_type": "comparison",
+      "options": ["3", "8"],
+      "correct_answer": "3",
+      "explanation": "3 comes before 8 when counting, so 3 is smaller."
+    },
+    {
+      "question_number": 5,
+      "question": "Fill in the missing number: 1, 2, ___, 4, 5.",
+      "question_type": "sequence",
+      "options": ["0", "3", "6", "7"],
+      "correct_answer": "3",
+      "explanation": "The number 3 fills the gap between 2 and 4."
+    }
+  ],
+  "answer_key": {
+    "1": "4",
+    "2": "7",
+    "3": "7",
+    "4": "3",
+    "5": "3"
+  }
+}

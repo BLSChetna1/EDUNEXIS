@@ -1,0 +1,55 @@
+{
+  "class": "Class 3",
+  "subject": "English",
+  "topic": "Nouns and Action Words",
+  "instructions": "Read the sentences and questions carefully. Choose or fill in the correct naming word (noun) or action word (verb).",
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Which of these words is a Noun (naming word for an animal)?",
+      "question_type": "multiple_choice",
+      "options": ["Run", "Elephant", "Quickly", "Sleep"],
+      "correct_answer": "Elephant",
+      "explanation": "Elephant is the name of an animal, so it is a Noun."
+    },
+    {
+      "question_number": 2,
+      "question": "Identify the Action Word in the sentence: 'The boy kicks the football.'",
+      "question_type": "multiple_choice",
+      "options": ["boy", "kicks", "football", "The"],
+      "correct_answer": "kicks",
+      "explanation": "'kicks' is the action being performed."
+    },
+    {
+      "question_number": 3,
+      "question": "Complete the sentence with the correct action word: 'Fish _____ in the clear river water.'",
+      "question_type": "fill_in_the_blank",
+      "options": ["fly", "swim", "crawl", "bark"],
+      "correct_answer": "swim",
+      "explanation": "Fish swim in water."
+    },
+    {
+      "question_number": 4,
+      "question": "Which group contains ONLY nouns?",
+      "question_type": "multiple_choice",
+      "options": ["Doctor, School, Pencil", "Run, Jump, Sing", "Big, Small, Blue", "Fast, Slowly, Loudly"],
+      "correct_answer": "Doctor, School, Pencil",
+      "explanation": "Doctor (person), School (place), Pencil (thing) are all nouns."
+    },
+    {
+      "question_number": 5,
+      "question": "Is the underlined word in 'Ravi eats an apple' a Noun or an Action Word? Word: 'eats'",
+      "question_type": "multiple_choice",
+      "options": ["Noun", "Action Word"],
+      "correct_answer": "Action Word",
+      "explanation": "'eats' expresses a physical action."
+    }
+  ],
+  "answer_key": {
+    "1": "Elephant",
+    "2": "kicks",
+    "3": "swim",
+    "4": "Doctor, School, Pencil",
+    "5": "Action Word"
+  }
+}

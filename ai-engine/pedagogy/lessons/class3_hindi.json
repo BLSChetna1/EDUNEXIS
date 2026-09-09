@@ -1,0 +1,117 @@
+{
+  "class": "Class 3",
+  "subject": "Hindi",
+  "topic": "Varnamala and Matras (वर्णमाला और मात्राएँ)",
+  "duration": "40 minutes",
+  "learning_objectives": [
+    "Identify Hindi Swar (vowels) and Vyanjan (consonants) accurately",
+    "Understand the sound and symbolic representation of primary Matras (ा, ि, ी, ु, ू)",
+    "Combine consonants with matras to form two-letter and three-letter meaningful words",
+    "Read simple Hindi words aloud with correct phonetic pronunciation"
+  ],
+  "vocabulary": [
+    {
+      "word": "स्वर (Swar)",
+      "meaning": "Vowels in Hindi (अ, आ, इ, ई, उ, ऊ, ए, ऐ, ओ, औ) that give sounds to matras.",
+      "example_sentence": "स्वर स्वतंत्र ध्वनियाँ हैं।"
+    },
+    {
+      "word": "व्यंजन (Vyanjan)",
+      "meaning": "Consonants in Hindi (क, ख, ग, घ...) that combine with swar.",
+      "example_sentence": "क, ख, ग व्यंजन वर्ण हैं।"
+    },
+    {
+      "word": "मात्रा (Matra)",
+      "meaning": "Vowel signs attached to consonants to change their sound (e.g., क + ा = का).",
+      "example_sentence": "आ की मात्रा जोड़ने से 'का' बनता है।"
+    },
+    {
+      "word": "शब्द (Shabd)",
+      "meaning": "A meaningful group of letters and matras (e.g., आम, किताब, सूरज).",
+      "example_sentence": "वर्णों के सार्थक मेल को शब्द कहते हैं।"
+    }
+  ],
+  "introduction": "Display a large colorful chart of Hindi Varnamala on the board. Explain that letters in Hindi are like building blocks. When we add 'Matras' (vowel symbols) to consonants, they make wonderful sounds and words that we speak every day at home and school!",
+  "teacher_activity": [
+    "Write basic consonants on the board and demonstrate adding the 'Aa' matra: क + ा = का, म + ा = मा (मामा, काम).",
+    "Pronounce the short vowel 'इ' (ि) and long vowel 'ई' (ी) sounds clearly with hand gestures.",
+    "Show picture flashcards and write the matching Hindi word below each picture (e.g., 🥭 आम, 🐟 मछली, 🌻 गुलाब).",
+    "Guide students to trace matras on slate boards."
+  ],
+  "student_activity": [
+    "Chant the Varnamala rhyme aloud together in rhythm.",
+    "Form new words by combining consonant cards with matra cards (e.g., न + ी + ल + ा = नीला).",
+    "Read aloud short two-syllable Hindi words written on the blackboard.",
+    "Write 5 words with 'आ' (ा) and 'ई' (ी) matras in notebooks."
+  ],
+  "lesson_steps": [
+    {
+      "step_number": 1,
+      "title": "Varnamala Chant & Recall",
+      "duration": "5 minutes",
+      "description": "Recite Swar and Vyanjan with physical clapping to energize students."
+    },
+    {
+      "step_number": 2,
+      "title": "Introducing Matra Signs (ा, ि, ी)",
+      "duration": "10 minutes",
+      "description": "Demonstrate the shape and phonetic sound of Aa, Chhoti Ee, and Badi Ee matras."
+    },
+    {
+      "step_number": 3,
+      "title": "Word Building on Blackboard",
+      "duration": "12 minutes",
+      "description": "Build words together: क+ा+र = कार, त+ि+त+ल+ी = तितली, प+ा+न+ी = पानी."
+    },
+    {
+      "step_number": 4,
+      "title": "Interactive Matra Matching Game",
+      "duration": "8 minutes",
+      "description": "Students match picture cards to correct matra word labels."
+    },
+    {
+      "step_number": 5,
+      "title": "Recap & Reading Practice",
+      "duration": "5 minutes",
+      "description": "Read 5 words aloud together and assign home practice."
+    }
+  ],
+  "classroom_activities": [
+    {
+      "activity_name": "Matra Wheel",
+      "description": "Rotate a paper wheel to attach different matras to the consonant 'म' (मा, मि, मी, मु, मू) and read the sound."
+    },
+    {
+      "activity_name": "Picture-Word Hunt",
+      "description": "Students find pictures around the room and write the corresponding Hindi word with correct matra."
+    }
+  ],
+  "assessment_questions": [
+    {
+      "question_id": "c3_hin_q1",
+      "question": "Which matra is added to 'क' to make the word 'काम'?",
+      "expected_answer": "आ की मात्रा (ा)",
+      "type": "short_answer"
+    },
+    {
+      "question_id": "c3_hin_q2",
+      "question": "Choose the correct spelling: (क) कितब (ख) किताब (ग) कताब",
+      "expected_answer": "किताब",
+      "type": "multiple_choice"
+    },
+    {
+      "question_id": "c3_hin_q3",
+      "question": "Fill in the blank with correct matra: म_छल_ (Fish)",
+      "expected_answer": "मछली",
+      "type": "fill_in_the_blank"
+    }
+  ],
+  "homework": {
+    "title": "Matra Detective Worksheet",
+    "tasks": [
+      "Write 5 words having 'आ' की मात्रा (ा) in your notebook.",
+      "Write 5 words having 'ई' की मात्रा (ी) in your notebook.",
+      "Read one short story paragraph from your Hindi primer book to your parents."
+    ]
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "class": "Class 1",
+  "subject": "Mathematics",
+  "topic": "Numbers 1-10",
+  "duration": "40 minutes",
+  "learning_objectives": [
+    "Recognize and identify numbers from 1 to 10",
+    "Count objects up to 10 accurately using one-to-one correspondence",
+    "Write and sequence numbers from 1 to 10",
+    "Match written numerals with the correct quantity of items"
+  ],
+  "introduction": "Welcome students to the world of numbers. Begin by showing ten fingers and counting together from 1 to 10 with a cheerful counting song. Explain that numbers help us count everything around us like pencils, toys, and friends.",
+  "teacher_activity": [
+    "Hold up large number flashcards (1 to 10) one by one and pronounce the number name clearly.",
+    "Place physical counting counters (beads/blocks) on the table and count aloud with the class.",
+    "Draw sets of simple shapes on the blackboard (e.g., 3 stars, 5 circles) and write the corresponding numeral next to them.",
+    "Guide students to trace numbers in the air with their index fingers."
+  ],
+  "student_activity": [
+    "Echo the teacher in pronouncing number names from 1 to 10.",
+    "Clap hands while counting: 1 clap for 1, 2 claps for 2, up to 10 claps for 10.",
+    "Count their own fingers and school supplies on their desk.",
+    "Trace numbers on their notebooks and slate boards."
+  ],
+  "lesson_steps": [
+    {
+      "step_number": 1,
+      "title": "Warm-up & Number Song",
+      "duration": "5 minutes",
+      "description": "Sing a short counting rhyme (1, 2, buckle my shoe / 1 to 10 finger count) to engage the class."
+    },
+    {
+      "step_number": 2,
+      "title": "Numeral Recognition (1 to 5)",
+      "duration": "10 minutes",
+      "description": "Introduce numerals 1, 2, 3, 4, and 5 with flashcards and physical items."
+    },
+    {
+      "step_number": 3,
+      "title": "Numeral Recognition (6 to 10)",
+      "duration": "10 minutes",
+      "description": "Introduce numerals 6, 7, 8, 9, and 10 with counting beads and board illustrations."
+    },
+    {
+      "step_number": 4,
+      "title": "Interactive Counting Practice",
+      "duration": "10 minutes",
+      "description": "Call volunteers to the front to count objects in a basket and point to the matching number card."
+    },
+    {
+      "step_number": 5,
+      "title": "Review & Recap",
+      "duration": "5 minutes",
+      "description": "Count together from 1 to 10 forward and backward as a whole group."
+    }
+  ],
+  "classroom_activities": [
+    {
+      "activity_name": "Number Jump",
+      "description": "Draw numbers 1 to 10 on the floor. When the teacher calls out a number, the student jumps onto the correct number circle."
+    },
+    {
+      "activity_name": "Count and Collect",
+      "description": "Students work in pairs. One student shows a number card, and the other student collects that exact number of crayons."
+    }
+  ],
+  "assessment_questions": [
+    {
+      "question_id": "c1_num_q1",
+      "question": "How many fingers do you have on one hand?",
+      "expected_answer": "5",
+      "type": "oral"
+    },
+    {
+      "question_id": "c1_num_q2",
+      "question": "Which number comes right after 3?",
+      "expected_answer": "4",
+      "type": "short_answer"
+    },
+    {
+      "question_id": "c1_num_q3",
+      "question": "Count the dots: • • • • • • • (How many dots?)",
+      "expected_answer": "7",
+      "type": "counting"
+    }
+  ],
+  "homework": {
+    "title": "Home Counting Detective",
+    "tasks": [
+      "Count 5 spoons and 3 cups in the kitchen with your parents.",
+      "Draw 4 flowers and 6 stars in your notebook and write the numbers below each drawing.",
+      "Practice writing numbers 1 to 10 two times."
+    ]
+  }
+}

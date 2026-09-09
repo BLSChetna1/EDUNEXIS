@@ -1,0 +1,95 @@
+{
+  "class": "Class 3",
+  "subject": "Environmental Studies / EVS",
+  "topic": "Plants and Animals Around Us",
+  "duration": "40 minutes",
+  "learning_objectives": [
+    "Identify different parts of a green plant (root, stem, leaf, flower, fruit) and their basic functions",
+    "Classify animals into domestic, wild, and aquatic animals",
+    "Understand the importance of plants and trees for fresh air, food, and shelter",
+    "Develop habits of caring for trees and living creatures in our local environment"
+  ],
+  "introduction": "Take students for a 3-minute nature observation at the classroom window or school garden. Point to trees, flowering plants, birds, and squirrels. Explain that plants and animals are our living neighbors and nature's best friends that give us food, shade, and clean air to breathe!",
+  "teacher_activity": [
+    "Bring a potted plant to class and label its parts on the blackboard: Root, Stem, Leaf, Flower, Fruit.",
+    "Show colorful charts comparing domestic animals (Cow, Goat, Dog) with wild animals (Tiger, Deer, Elephant).",
+    "Explain how plants make their food using sunlight and water (photosynthesis in simple child terms).",
+    "Lead a discussion on why we must not pluck flowers or hurt small animals."
+  ],
+  "student_activity": [
+    "Draw a simple green plant in notebooks and color and label its 5 parts.",
+    "Imitate animal sounds and movements (lion roar, bird chirp, frog hop).",
+    "Sort animal picture cards into 'Domestic Animals' and 'Wild Animals' columns.",
+    "Share one way they take care of plants or pets at home."
+  ],
+  "lesson_steps": [
+    {
+      "step_number": 1,
+      "title": "Nature Warm-up & Garden Observation",
+      "duration": "5 minutes",
+      "description": "Look at school garden plants and discuss what green plants need to grow."
+    },
+    {
+      "step_number": 2,
+      "title": "Parts of a Plant & Functions",
+      "duration": "12 minutes",
+      "description": "Demonstrate the root (drinks water), stem (stands tall), and leaves (make food)."
+    },
+    {
+      "step_number": 3,
+      "title": "Animals and Their Habitats",
+      "duration": "12 minutes",
+      "description": "Introduce domestic animals that live with humans and wild animals that live in forests."
+    },
+    {
+      "step_number": 4,
+      "title": "Care for Nature & Green Habits",
+      "duration": "6 minutes",
+      "description": "Discuss watering plants, planting trees (Van Mahotsav), and giving water to birds."
+    },
+    {
+      "step_number": 5,
+      "title": "Review Quiz",
+      "duration": "5 minutes",
+      "description": "Quick-fire questions on plant parts and animal homes."
+    }
+  ],
+  "classroom_activities": [
+    {
+      "activity_name": "Leaf Rubbing Art",
+      "description": "Place a fallen leaf under a paper sheet, rub with a green crayon to reveal leaf veins and shapes."
+    },
+    {
+      "activity_name": "Animal Habitat Match",
+      "description": "Match animal cutouts to habitat boards (Forest, Farm, Pond, Ocean)."
+    }
+  ],
+  "assessment_questions": [
+    {
+      "question_id": "c3_evs_q1",
+      "question": "Which part of the plant absorbs water from the soil?",
+      "expected_answer": "Roots",
+      "type": "short_answer"
+    },
+    {
+      "question_id": "c3_evs_q2",
+      "question": "Which of the following is a Wild Animal? (A) Cow (B) Tiger (C) Goat (D) Sheep",
+      "expected_answer": "Tiger",
+      "type": "multiple_choice"
+    },
+    {
+      "question_id": "c3_evs_q3",
+      "question": "Green leaves are called the food factories of plants.",
+      "expected_answer": "True",
+      "type": "true_false"
+    }
+  ],
+  "homework": {
+    "title": "Young Nature Detective",
+    "tasks": [
+      "Water one plant or tree near your home with your parents.",
+      "Collect 2 different fallen leaves, paste them in your scrapbook, and write their names.",
+      "Write the names of 3 domestic animals and 3 wild animals in your notebook."
+    ]
+  }
+}

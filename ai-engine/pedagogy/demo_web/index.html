@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDUNEXIS — AI Pedagogy Demo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563EB;
+            --primary-dark: #1D4ED8;
+            --bg: #F8FAFC;
+            --card-bg: #FFFFFF;
+            --text-main: #0F172A;
+            --text-muted: #64748B;
+            --border: #E2E8F0;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: var(--bg);
+            color: var(--text-main);
+            display: flex;
+            min-height: 100vh;
+        }
+        .sidebar {
+            width: 340px;
+            background: #FFFFFF;
+            border-right: 1px solid var(--border);
+            padding: 1.5rem;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            overflow-y: auto;
+        }
+        .sidebar h2 { font-size: 1.2rem; font-weight: 700; margin-bottom: 1.2rem; color: #1E293B; }
+        .form-group { margin-bottom: 1.1rem; }
+        .form-group label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.35rem; color: #334155; }
+        .form-group select {
+            width: 100%;
+            padding: 0.6rem 0.8rem;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 0.9rem;
+            background: #FFFFFF;
+            color: #0F172A;
+            outline: none;
+        }
+        .form-group select:focus { border-color: var(--primary); box-shadow: 0 0 0 2px rgba(37,99,235,0.15); }
+        .btn-submit {
+            width: 100%;
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.75rem;
+            border-radius: 6px;
+            font-weight: 700;
+            cursor: pointer;
+            font-size: 0.95rem;
+            transition: background 0.2s;
+            margin-top: 0.5rem;
+        }
+        .btn-submit:hover { background: var(--primary-dark); }
+        .main-content {
+            flex: 1;
+            padding: 2rem 3rem;
+            overflow-y: auto;
+        }
+        .header h1 { font-size: 1.8rem; font-weight: 800; color: #0F172A; }
+        .header p { color: var(--text-muted); margin-top: 0.2rem; margin-bottom: 1.8rem; }
+        .section-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+        }
+        .section-card h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #0F172A;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin-bottom: 1.2rem;
+        }
+        .metric-box {
+            background: #F1F5F9;
+            padding: 0.9rem 1rem;
+            border-radius: 8px;
+        }
+        .metric-box small { color: var(--text-muted); font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
+        .metric-box p { font-size: 1.1rem; font-weight: 700; color: #0F172A; margin-top: 0.2rem; }
+        .strategy-banner {
+            background: #F0FDF4;
+            border-left: 4px solid #22C55E;
+            padding: 1rem;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 1rem;
+        }
+        .tip-item {
+            background: #EFF6FF;
+            border-left: 3px solid var(--primary);
+            padding: 0.6rem 0.9rem;
+            border-radius: 4px;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+        .step-item {
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 0.9rem 1.1rem;
+            margin-bottom: 0.8rem;
+            background: #FAFAFA;
+        }
+        .step-header { font-weight: 700; color: #1E293B; margin-bottom: 0.3rem; }
+        .flashcard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        .flashcard {
+            background: #F8FAFC;
+            border: 1px solid #CBD5E1;
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+        }
+        .flashcard h4 { color: var(--primary); font-size: 1.05rem; }
+        .flashcard p { font-weight: 700; margin: 0.4rem 0; color: #0F172A; }
+        .flashcard small { color: var(--text-muted); font-size: 0.8rem; }
+        .badge-yes { background: #DCFCE7; color: #166534; padding: 0.25rem 0.6rem; border-radius: 4px; font-weight: 700; font-size: 0.85rem; }
+        .badge-no { background: #F1F5F9; color: #475569; padding: 0.25rem 0.6rem; border-radius: 4px; font-weight: 700; font-size: 0.85rem; }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>⚙️ Lesson Parameters</h2>
+        <div class="form-group">
+            <label>1. Class</label>
+            <select id="classSelect" onchange="onClassChange()"></select>
+        </div>
+        <div class="form-group">
+            <label>2. Subject</label>
+            <select id="subjectSelect" onchange="onSubjectChange()"></select>
+        </div>
+        <div class="form-group">
+            <label>3. Topic</label>
+            <select id="topicSelect"></select>
+        </div>
+        <div class="form-group">
+            <label>4. Student Level</label>
+            <select id="levelSelect">
+                <option value="beginner" selected>Beginner</option>
+                <option value="intermediate">Intermediate</option>
+                <option value="advanced">Advanced</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>5. Learning Mode</label>
+            <select id="modeSelect">
+                <option value="visual" selected>Visual</option>
+                <option value="auditory">Auditory</option>
+                <option value="activity_based">Activity Based</option>
+                <option value="mixed">Mixed</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>6. Available Time</label>
+            <select id="timeSelect">
+                <option value="30" selected>30 minutes</option>
+                <option value="20">20 minutes</option>
+                <option value="40">40 minutes</option>
+                <option value="60">60 minutes</option>
+                <option value="none">Original lesson duration</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>7. Target Language</label>
+            <select id="langSelect">
+                <option value="Hindi" selected>Hindi</option>
+                <option value="English">English</option>
+                <option value="Santhali">Santhali</option>
+            </select>
+        </div>
+        <button class="btn-submit" onclick="generateTeachingPlan()">🚀 Generate Teaching Plan</button>
+    </div>
+
+    <div class="main-content">
+        <div class="header">
+            <h1>EDUNEXIS — AI Pedagogy Demo</h1>
+            <p>Educational Content & AI Teaching Recommendation (Hackathon Prototype)</p>
+        </div>
+        <div id="resultsContainer"></div>
+    </div>
+
+    <script>
+        const catalog = [
+            { id: "class1_numbers", class: "Class 1", subject: "Mathematics", topic: "Numbers 1-10", category: "numbers_1_10" },
+            { id: "class1_fruits", class: "Class 1", subject: "Language", topic: "Fruits", category: "fruits" },
+            { id: "class2_addition", class: "Class 2", subject: "Mathematics", topic: "Basic Addition", category: "basic_addition" }
+        ];
+
+        function initDropdowns() {
+            const classSelect = document.getElementById('classSelect');
+            const classes = [...new Set(catalog.map(l => l.class))].sort();
+            classSelect.innerHTML = classes.map(c => `<option value="${c}" ${c === 'Class 1' ? 'selected' : ''}>${c}</option>`).join('');
+            onClassChange();
+        }
+
+        function onClassChange() {
+            const selectedClass = document.getElementById('classSelect').value;
+            const subjectSelect = document.getElementById('subjectSelect');
+            const subjects = [...new Set(catalog.filter(l => l.class === selectedClass).map(l => l.subject))].sort();
+            subjectSelect.innerHTML = subjects.map(s => `<option value="${s}" ${s === 'Mathematics' ? 'selected' : ''}>${s}</option>`).join('');
+            onSubjectChange();
+        }
+
+        function onSubjectChange() {
+            const selectedClass = document.getElementById('classSelect').value;
+            const selectedSubject = document.getElementById('subjectSelect').value;
+            const topicSelect = document.getElementById('topicSelect');
+            const topics = catalog.filter(l => l.class === selectedClass && l.subject === selectedSubject).map(l => l.topic);
+            topicSelect.innerHTML = topics.map(t => `<option value="${t}" ${t === 'Numbers 1-10' ? 'selected' : ''}>${t}</option>`).join('');
+        }
+
+        async function generateTeachingPlan() {
+            const container = document.getElementById('resultsContainer');
+            container.innerHTML = '<p style="color:var(--text-muted); font-size:1.05rem;">⏳ Generating pedagogical teaching package...</p>';
+
+            const payload = {
+                class_name: document.getElementById('classSelect').value,
+                subject: document.getElementById('subjectSelect').value,
+                topic: document.getElementById('topicSelect').value,
+                student_level: document.getElementById('levelSelect').value,
+                learning_mode: document.getElementById('modeSelect').value,
+                available_time_minutes: document.getElementById('timeSelect').value === 'none' ? null : parseInt(document.getElementById('timeSelect').value),
+                target_language: document.getElementById('langSelect').value
+            };
+
+            try {
+                const res = await fetch('/api/generate', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                const data = await res.json();
+                renderResults(data);
+            } catch (err) {
+                // If local API is not available, render client-side fallback
+                renderFallbackResults(payload);
+            }
+        }
+
+        function renderFallbackResults(p) {
+            let sampleData;
+            if (p.topic === "Fruits") {
+                sampleData = {
+                    lesson: { lesson: { class: p.class_name, subject: p.subject, topic: p.topic, introduction: "Show fruit basket to class and ask students to name favorite fruits.", learning_objectives: ["Identify common fruits in English", "Recognize fruit colors and shapes", "Improve pronunciation"] }, flashcards: [{front:"Apple 🍎", back:"Red, sweet fruit", sentence:"An apple a day keeps the doctor away"}, {front:"Banana 🍌", back:"Yellow, soft fruit", sentence:"Monkeys love yellow bananas"}, {front:"Mango 🥭", back:"Yellow, king of fruits", sentence:"Mango is juicy and sweet"}] },
+                    teaching_recommendation: { student_context: { available_time_minutes: p.available_time_minutes || 40 }, recommended_strategy: "Interactive Vocabulary Scaffolding with phonetic repetitions and color matching.", teacher_tips: ["Display large colorful picture cards", "Use call-and-response pronunciation", "Praise every student attempt"], steps: [{step_number:1, title:"Warm-up & Reveal", duration:"5 minutes", description:"Show the fruit basket to spark excitement."},{step_number:2, title:"Vocabulary Modeling", duration:"15 minutes", description:"Pronounce each fruit name clearly."},{step_number:3, title:"Speaking Practice", duration:"10 minutes", description:"Students repeat: 'This is a red apple'."}], activities: [{activity_name:"Fruit Basket Toss", description:"Toss ball and name a fruit of that color."}], assessment: [{question:"What color is a ripe banana?", correct_answer:"Yellow"}, {question:"Which fruit is round and orange?", correct_answer:"Orange"}] },
+                    translation_package: { source_language: "English", target_language: p.target_language, translation_required: p.target_language !== "English" }
+                };
+            } else if (p.topic === "Basic Addition") {
+                sampleData = {
+                    lesson: { lesson: { class: p.class_name, subject: p.subject, topic: p.topic, introduction: "Tell a story: Ravi has 3 marbles and gets 2 more. How many in total?", learning_objectives: ["Understand addition as combining groups", "Use + and = symbols correctly", "Solve single-digit sums"] }, flashcards: [{front:"2 + 3 = ?", back:"5", hint:"2 dots + 3 dots = 5"}, {front:"4 + 4 = ?", back:"8", hint:"4 stars + 4 stars = 8"}] },
+                    teaching_recommendation: { student_context: { available_time_minutes: p.available_time_minutes || 45 }, recommended_strategy: "Kinesthetic and Visual Mathematical Modeling with physical counting blocks.", teacher_tips: ["Use fingers and beads to demonstrate combining", "Explain '+' means put together", "Praise correct mental steps"], steps: [{step_number:1, title:"Story Introduction", duration:"7 minutes", description:"Demonstrate combining two sets of objects."},{step_number:2, title:"Equation Modeling", duration:"13 minutes", description:"Write 3 + 2 = 5 on the board."},{step_number:3, title:"Partner Practice", duration:"10 minutes", description:"Students solve addition cards in pairs."}], activities: [{activity_name:"Roll and Add", description:"Roll two dice and find the total sum."}], assessment: [{question:"What is 3 + 4?", correct_answer:"7"}, {question:"5 + ___ = 9", correct_answer:"4"}] },
+                    translation_package: { source_language: "English", target_language: p.target_language, translation_required: p.target_language !== "English" }
+                };
+            } else {
+                sampleData = {
+                    lesson: { lesson: { class: p.class_name, subject: p.subject, topic: p.topic, introduction: "Welcome students to numbers. Count ten fingers together with a counting rhyme.", learning_objectives: ["Recognize numbers 1 to 10", "Count objects using one-to-one correspondence", "Write numbers in sequence"] }, flashcards: [{front:"1 - One", back:"★ (One star)", hint:"One sun in the sky"}, {front:"2 - Two", back:"★★ (Two stars)", hint:"Two eyes on your face"}, {front:"3 - Three", back:"★★★ (Three stars)", hint:"Three wheels on a rickshaw"}] },
+                    teaching_recommendation: { student_context: { available_time_minutes: p.available_time_minutes || 30 }, recommended_strategy: "Foundational Scaffolding: High visual demonstration, flashcard anchoring, and rhythmic repetition.", teacher_tips: ["Break instructions into simple spoken steps", "Use physical gestures and finger counting", "Display large number flashcards at eye level"], steps: [{step_number:1, title:"Number Song", duration:"5 minutes", description:"Sing a counting rhyme together."},{step_number:2, title:"Numeral Recognition 1-5", duration:"12 minutes", description:"Show flashcards and count beads."},{step_number:3, title:"Practice & Recap", duration:"13 minutes", description:"Students count objects on their desks."}], activities: [{activity_name:"Number Jump", description:"Jump onto number circles on the floor."}, {activity_name:"Count and Collect", description:"Collect matching number of crayons."}], assessment: [{question:"Which number comes after 4?", correct_answer:"5"}, {question:"How many fingers on one hand?", correct_answer:"5"}] },
+                    translation_package: { source_language: "English", target_language: p.target_language, translation_required: p.target_language !== "English" }
+                };
+            }
+            renderResults(sampleData);
+        }
+
+        function renderResults(data) {
+            const lesson = data.lesson.lesson;
+            const rec = data.teaching_recommendation;
+            const trans = data.translation_package;
+            const flashcards = data.lesson.flashcards || [];
+
+            let html = `
+                <!-- SECTION 1 -->
+                <div class="section-card">
+                    <h3>📚 Section 1: Lesson Overview</h3>
+                    <div class="metrics-grid">
+                        <div class="metric-box"><small>Class</small><p>${lesson.class}</p></div>
+                        <div class="metric-box"><small>Subject</small><p>${lesson.subject}</p></div>
+                        <div class="metric-box"><small>Topic</small><p>${lesson.topic}</p></div>
+                        <div class="metric-box"><small>Allocated Time</small><p>${rec.student_context.available_time_minutes} mins</p></div>
+                    </div>
+                    <p style="margin-bottom:0.8rem;"><strong>Introduction:</strong> ${lesson.introduction}</p>
+                    <strong>Learning Objectives:</strong>
+                    <ul style="margin-left: 1.2rem; margin-top: 0.3rem;">
+                        ${lesson.learning_objectives.map(o => `<li>${o}</li>`).join('')}
+                    </ul>
+                </div>
+
+                <!-- SECTION 2 -->
+                <div class="section-card">
+                    <h3>🧑‍🏫 Section 2: Recommended Teaching Strategy</h3>
+                    <div class="strategy-banner">🎯 <strong>Pedagogical Strategy:</strong><br>${rec.recommended_strategy}</div>
+                    <strong>Teacher Tips for Vernacular/Tribal Classroom:</strong>
+                    <div style="margin-top: 0.5rem;">
+                        ${rec.teacher_tips.map(t => `<div class="tip-item">💡 ${t}</div>`).join('')}
+                    </div>
+                </div>
+
+                <!-- SECTION 3 -->
+                <div class="section-card">
+                    <h3>⏱️ Section 3: Adapted Lesson Steps</h3>
+                    ${rec.steps.map(s => `
+                        <div class="step-item">
+                            <div class="step-header">Step ${s.step_number}: ${s.title} (${s.duration})</div>
+                            <div>${s.description}</div>
+                        </div>
+                    `).join('')}
+                </div>
+
+                <!-- SECTION 4 -->
+                <div class="section-card">
+                    <h3>🎯 Section 4: Classroom Activities</h3>
+                    ${rec.activities.map(a => `
+                        <div class="tip-item" style="border-left-color: #10B981; background: #ECFDF5; margin-bottom: 0.8rem;">
+                            <strong>${a.activity_name}:</strong> ${a.description}
+                        </div>
+                    `).join('')}
+                </div>
+
+                <!-- SECTION 5 -->
+                <div class="section-card">
+                    <h3>📝 Section 5: Assessment & Formative Checks</h3>
+                    ${rec.assessment.map((q, idx) => `
+                        <div style="margin-bottom: 1rem; padding-bottom: 0.8rem; border-bottom: 1px solid var(--border);">
+                            <p><strong>Q${idx+1}. ${q.question}</strong></p>
+                            ${q.options ? `<p style="color:var(--text-muted); font-size:0.9rem; margin: 0.3rem 0;">Options: ${q.options.join(', ')}</p>` : ''}
+                            <p style="color:#16A34A; font-weight:700; margin-top: 0.2rem;">Correct Answer: ${q.correct_answer || q.expected_answer}</p>
+                            ${q.explanation ? `<p style="font-size:0.85rem; color:var(--text-muted);">Explanation: ${q.explanation}</p>` : ''}
+                        </div>
+                    `).join('')}
+                </div>
+
+                <!-- SECTION 6 -->
+                <div class="section-card">
+                    <h3>🎴 Section 6: Flashcards Deck</h3>
+                    <div class="flashcard-grid">
+                        ${flashcards.map(fc => `
+                            <div class="flashcard">
+                                <h4>${fc.front}</h4>
+                                <p>${fc.back}</p>
+                                ${fc.hint || fc.sentence ? `<small>${fc.hint || fc.sentence}</small>` : ''}
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+
+                <!-- SECTION 7 -->
+                <div class="section-card">
+                    <h3>🌐 Section 7: Translation Status</h3>
+                    <div class="metrics-grid" style="grid-template-columns: repeat(3, 1fr);">
+                        <div class="metric-box"><small>Source Language</small><p>${trans.source_language}</p></div>
+                        <div class="metric-box"><small>Target Language</small><p>${trans.target_language}</p></div>
+                        <div class="metric-box"><small>Translation Required</small><p><span class="${trans.translation_required ? 'badge-yes' : 'badge-no'}">${trans.translation_required ? 'Yes' : 'No'}</span></p></div>
+                    </div>
+                    <p style="font-size:0.9rem; color:var(--text-muted);">
+                        ${trans.translation_required 
+                            ? `ℹ️ Translation package prepared for downstream Indic/tribal language translation module. English baseline data is preserved without mutating original content.` 
+                            : `✅ Baseline curriculum content is in English. No translation required.`}
+                    </p>
+                </div>
+            `;
+            document.getElementById('resultsContainer').innerHTML = html;
+        }
+
+        window.onload = () => {
+            initDropdowns();
+            generateTeachingPlan();
+        };
+    </script>
+</body>
+</html>

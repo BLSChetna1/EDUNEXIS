@@ -1,0 +1,158 @@
+{
+  "numbers_1_10": {
+    "topic": "Numbers 1-10",
+    "class": "Class 1",
+    "subject": "Mathematics",
+    "questions": [
+      {
+        "id": "num_q1",
+        "type": "multiple_choice",
+        "difficulty": "easy",
+        "question": "Which number comes immediately after 4?",
+        "options": ["3", "5", "6", "7"],
+        "correct_answer": "5",
+        "explanation": "When counting forward, 5 comes right after 4."
+      },
+      {
+        "id": "num_q2",
+        "type": "counting",
+        "difficulty": "easy",
+        "question": "Count the balloons: 🎈 🎈 🎈. How many are there?",
+        "options": ["2", "3", "4", "5"],
+        "correct_answer": "3",
+        "explanation": "There are 3 balloons."
+      },
+      {
+        "id": "num_q3",
+        "type": "multiple_choice",
+        "difficulty": "medium",
+        "question": "Which of these numbers is the largest?",
+        "options": ["2", "5", "9", "6"],
+        "correct_answer": "9",
+        "explanation": "9 represents the highest quantity among 2, 5, 9, and 6."
+      },
+      {
+        "id": "num_q4",
+        "type": "sequence",
+        "difficulty": "medium",
+        "question": "What is the missing number: 7, 8, ___, 10?",
+        "options": ["6", "9", "11", "5"],
+        "correct_answer": "9",
+        "explanation": "9 comes between 8 and 10."
+      },
+      {
+        "id": "num_q5",
+        "type": "true_false",
+        "difficulty": "easy",
+        "question": "The number 10 is smaller than the number 2.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "10 is greater than 2."
+      }
+    ]
+  },
+  "fruits": {
+    "topic": "Fruits",
+    "class": "Class 1",
+    "subject": "Language",
+    "questions": [
+      {
+        "id": "frt_q1",
+        "type": "multiple_choice",
+        "difficulty": "easy",
+        "question": "Which fruit is red and crunchy?",
+        "options": ["Apple", "Banana", "Lemon", "Grapes"],
+        "correct_answer": "Apple",
+        "explanation": "Apples are typically red, sweet, and crunchy."
+      },
+      {
+        "id": "frt_q2",
+        "type": "multiple_choice",
+        "difficulty": "easy",
+        "question": "Which fruit do monkeys love to peel and eat?",
+        "options": ["Orange", "Banana", "Watermelon", "Guava"],
+        "correct_answer": "Banana",
+        "explanation": "Monkeys love yellow bananas."
+      },
+      {
+        "id": "frt_q3",
+        "type": "multiple_choice",
+        "difficulty": "medium",
+        "question": "Which of these fruits grows in bunches?",
+        "options": ["Mango", "Papaya", "Grapes", "Apple"],
+        "correct_answer": "Grapes",
+        "explanation": "Grapes grow in clusters or bunches on vines."
+      },
+      {
+        "id": "frt_q4",
+        "type": "multiple_choice",
+        "difficulty": "medium",
+        "question": "Which fruit is known as the 'King of Fruits' in India?",
+        "options": ["Mango", "Orange", "Banana", "Apple"],
+        "correct_answer": "Mango",
+        "explanation": "Mango is widely known as the king of fruits."
+      },
+      {
+        "id": "frt_q5",
+        "type": "true_false",
+        "difficulty": "easy",
+        "question": "An orange fruit is purple in color.",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "An orange fruit is orange in color, not purple."
+      }
+    ]
+  },
+  "basic_addition": {
+    "topic": "Basic Addition",
+    "class": "Class 2",
+    "subject": "Mathematics",
+    "questions": [
+      {
+        "id": "add_q1",
+        "type": "multiple_choice",
+        "difficulty": "easy",
+        "question": "What is 2 + 5?",
+        "options": ["6", "7", "8", "9"],
+        "correct_answer": "7",
+        "explanation": "2 + 5 = 7."
+      },
+      {
+        "id": "add_q2",
+        "type": "multiple_choice",
+        "difficulty": "easy",
+        "question": "What is 4 + 4?",
+        "options": ["6", "7", "8", "9"],
+        "correct_answer": "8",
+        "explanation": "4 + 4 = 8."
+      },
+      {
+        "id": "add_q3",
+        "type": "word_problem",
+        "difficulty": "medium",
+        "question": "Sara has 6 marbles. Amit gives her 3 more. How many marbles does Sara have in all?",
+        "options": ["8", "9", "10", "7"],
+        "correct_answer": "9",
+        "explanation": "6 + 3 = 9 marbles."
+      },
+      {
+        "id": "add_q4",
+        "type": "fill_in_the_blank",
+        "difficulty": "medium",
+        "question": "Find the missing number: 5 + ___ = 10",
+        "options": ["3", "4", "5", "6"],
+        "correct_answer": "5",
+        "explanation": "5 + 5 = 10."
+      },
+      {
+        "id": "add_q5",
+        "type": "true_false",
+        "difficulty": "easy",
+        "question": "Adding zero to any number changes its value. (Example: 7 + 0 = 0)",
+        "options": ["True", "False"],
+        "correct_answer": "False",
+        "explanation": "Adding zero leaves the number unchanged (7 + 0 = 7)."
+      }
+    ]
+  }
+}

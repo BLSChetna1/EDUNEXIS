@@ -1,0 +1,43 @@
+{
+  "curriculum_name": "Jharkhand Primary School Curriculum Reference (Classes 1-3)",
+  "version": "1.0.0",
+  "classes": {
+    "Class 1": [
+      "Mathematics",
+      "Language",
+      "Hindi",
+      "English",
+      "Environmental Studies / EVS",
+      "General Awareness",
+      "Art Education",
+      "Physical Education",
+      "Work Education"
+    ],
+    "Class 2": [
+      "Mathematics",
+      "Hindi",
+      "English",
+      "Environmental Studies / EVS",
+      "General Awareness",
+      "Art Education",
+      "Physical Education",
+      "Work Education"
+    ],
+    "Class 3": [
+      "Mathematics",
+      "Hindi",
+      "English",
+      "Environmental Studies / EVS",
+      "General Awareness",
+      "Art Education",
+      "Physical Education",
+      "Work Education"
+    ]
+  },
+  "target_languages": [
+    "Hindi",
+    "Santhali",
+    "Ho (Warang Chiti)",
+    "Mundari (Bani Hisir)"
+  ]
+}

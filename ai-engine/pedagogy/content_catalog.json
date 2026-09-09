@@ -1,0 +1,40 @@
+{
+  "supported_features": [
+    "lesson_generation",
+    "worksheet_generation",
+    "assessment_generation",
+    "flashcards"
+  ],
+  "lessons": [
+    {
+      "id": "class1_numbers",
+      "class": "Class 1",
+      "subject": "Mathematics",
+      "topic": "Numbers 1-10",
+      "lesson_file": "lessons/class1_numbers.json",
+      "worksheet_file": "worksheets/numbers.json",
+      "assessment_category": "numbers_1_10",
+      "flashcard_category": "numbers_1_10"
+    },
+    {
+      "id": "class1_fruits",
+      "class": "Class 1",
+      "subject": "Language",
+      "topic": "Fruits",
+      "lesson_file": "lessons/class1_fruits.json",
+      "worksheet_file": "worksheets/fruits.json",
+      "assessment_category": "fruits",
+      "flashcard_category": "fruits"
+    },
+    {
+      "id": "class2_addition",
+      "class": "Class 2",
+      "subject": "Mathematics",
+      "topic": "Basic Addition",
+      "lesson_file": "lessons/class2_addition.json",
+      "worksheet_file": "worksheets/addition.json",
+      "assessment_category": "basic_addition",
+      "flashcard_category": "basic_addition"
+    }
+  ]
+}

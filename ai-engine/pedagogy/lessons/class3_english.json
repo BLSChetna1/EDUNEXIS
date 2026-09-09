@@ -1,0 +1,112 @@
+{
+  "class": "Class 3",
+  "subject": "English",
+  "topic": "Nouns and Action Words",
+  "duration": "40 minutes",
+  "learning_objectives": [
+    "Identify nouns as names of people, places, animals, and things",
+    "Identify action words (verbs) as words that show what someone is doing",
+    "Distinguish between a naming word (noun) and an action word (verb) in simple sentences",
+    "Construct simple English sentences combining a noun and an action word (e.g. 'Birds fly', 'Rani reads')"
+  ],
+  "vocabulary": [
+    {
+      "word": "Noun",
+      "meaning": "The name of a person, place, animal, or thing (e.g., Boy, School, Dog, Pen).",
+      "example_sentence": "Ravi is reading a book."
+    },
+    {
+      "word": "Action Word",
+      "meaning": "A word that shows an action or movement (e.g., Jump, Sing, Read, Run).",
+      "example_sentence": "The children run in the playground."
+    },
+    {
+      "word": "Sentence",
+      "meaning": "A group of words that makes complete sense.",
+      "example_sentence": "The dog barks loudly."
+    }
+  ],
+  "introduction": "Point to objects and people around the classroom: teacher, blackboard, desk, door, friend. Ask students: 'What are these? Everything has a name!' Then ask a student to stand up, jump, and smile: 'What are they doing? They are doing actions!' Today we explore naming words (Nouns) and doing words (Action Words).",
+  "teacher_activity": [
+    "Create a two-column chart on the blackboard: 'Naming Words (Nouns)' and 'Action Words (Verbs)'.",
+    "Hold up picture cards (e.g., Cat, Doctor, River) and ask students to place them in the Naming Words column.",
+    "Act out different actions (miming sleeping, eating, writing) and ask students to name the action word.",
+    "Model sentence formation: 'The [Noun] [Action Word]' -> 'The frog jumps', 'The sun shines'."
+  ],
+  "student_activity": [
+    "Identify 3 nouns on their desk and 2 actions they did in the morning.",
+    "Play 'Simon Says' with action words (e.g., 'Simon says jump', 'Simon says clap').",
+    "Match noun flashcards with appropriate action word cards (e.g., Bird -> Fly, Fish -> Swim).",
+    "Write 4 simple noun-action sentences in notebooks."
+  ],
+  "lesson_steps": [
+    {
+      "step_number": 1,
+      "title": "Warm-up & Classroom Naming Game",
+      "duration": "5 minutes",
+      "description": "Name 5 classroom objects and 5 animals in English."
+    },
+    {
+      "step_number": 2,
+      "title": "Introduction to Naming Words (Nouns)",
+      "duration": "10 minutes",
+      "description": "Categorize nouns into Person, Place, Animal, and Thing with picture cards."
+    },
+    {
+      "step_number": 3,
+      "title": "Introduction to Action Words (Verbs)",
+      "duration": "10 minutes",
+      "description": "Demonstrate physical actions (Run, Dance, Write, Eat, Sleep) and connect to spelling."
+    },
+    {
+      "step_number": 4,
+      "title": "Sentence Building Practice",
+      "duration": "10 minutes",
+      "description": "Pair nouns with actions to make short 3-word sentences."
+    },
+    {
+      "step_number": 5,
+      "title": "Review & Exit Ticket",
+      "duration": "5 minutes",
+      "description": "Each student says one noun and one action word before line-up."
+    }
+  ],
+  "classroom_activities": [
+    {
+      "activity_name": "Action Charades",
+      "description": "A student mimes an action word silently. The rest of the class guesses the action word in English."
+    },
+    {
+      "activity_name": "Noun-Action Pair Up",
+      "description": "Half the class gets noun cards (e.g., Monkey), half gets action cards (e.g., Climbs). Students walk around to find their matching partner."
+    }
+  ],
+  "assessment_questions": [
+    {
+      "question_id": "c3_eng_q1",
+      "question": "Which of these is a Noun (naming word)? (A) Jump (B) Tiger (C) Sing",
+      "expected_answer": "Tiger",
+      "type": "multiple_choice"
+    },
+    {
+      "question_id": "c3_eng_q2",
+      "question": "Find the Action Word in this sentence: 'The girl dances happily.'",
+      "expected_answer": "dances",
+      "type": "short_answer"
+    },
+    {
+      "question_id": "c3_eng_q3",
+      "question": "Fill in the blank with a suitable action word: 'Birds _____ in the sky.'",
+      "expected_answer": "fly",
+      "type": "fill_in_the_blank"
+    }
+  ],
+  "homework": {
+    "title": "Grammar Explorer Fun",
+    "tasks": [
+      "Find and write 4 nouns (things or family members) in your home.",
+      "Write 4 action words of things you like to do on Sundays.",
+      "Make 2 sentences combining a noun and an action word."
+    ]
+  }
+}

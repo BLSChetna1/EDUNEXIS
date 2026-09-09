@@ -1,0 +1,121 @@
+{
+  "class": "Class 2",
+  "subject": "Mathematics",
+  "topic": "Basic Addition",
+  "duration": "45 minutes",
+  "learning_objectives": [
+    "Understand addition as the process of putting groups together or combining quantities",
+    "Recognize and correctly use the plus sign (+) and equal sign (=)",
+    "Perform single-digit and basic two-digit addition with sums up to 20",
+    "Solve simple one-step real-world addition word problems"
+  ],
+  "introduction": "Start with a relatable storytelling scenario: 'Ravi has 3 bright red marbles in his pocket. His friend Anita gives him 2 more marbles. Let us put all the marbles together and count how many marbles Ravi has in total!' Demonstrate that adding means putting together and finding the total.",
+  "teacher_activity": [
+    "Demonstrate combining physical groups using counting blocks and magnetic counters on the board.",
+    "Introduce mathematical symbols: '+' means 'add/plus' and '=' means 'equals/is equal to'.",
+    "Write out number sentences clearly (e.g., 3 + 2 = 5) and explain each part.",
+    "Guide students through the number line hopping method (start at 3, jump 2 steps right to land on 5)."
+  ],
+  "student_activity": [
+    "Use fingers and counting sticks to combine two groups of numbers.",
+    "Draw dots or tally marks in notebooks to solve addition problems.",
+    "Practice jumping along a floor number line to find sums.",
+    "Write out mathematical equations neatly on slates or notebooks."
+  ],
+  "lesson_steps": [
+    {
+      "step_number": 1,
+      "title": "Story Warm-up & Concept Introduction",
+      "duration": "7 minutes",
+      "description": "Tell the marble story and demonstrate physical grouping of items to illustrate addition."
+    },
+    {
+      "step_number": 2,
+      "title": "Introducing Symbols (+ and =)",
+      "duration": "8 minutes",
+      "description": "Teach the plus (+) and equals (=) symbols and how to read addition equations aloud."
+    },
+    {
+      "step_number": 3,
+      "title": "Guided Examples & Visual Modeling",
+      "duration": "12 minutes",
+      "description": "Work through 4 addition examples on the board using dots, fingers, and the number line."
+    },
+    {
+      "step_number": 4,
+      "title": "Interactive Practice & Partner Work",
+      "duration": "13 minutes",
+      "description": "Students work in pairs solving addition cards using counters."
+    },
+    {
+      "step_number": 5,
+      "title": "Recap & Quick Quiz",
+      "duration": "5 minutes",
+      "description": "Conduct a quick-fire verbal addition game to reinforce learning."
+    }
+  ],
+  "examples": [
+    {
+      "example_number": 1,
+      "equation": "2 + 3 = 5",
+      "visual_representation": "[● ●] + [● ● ●] = [● ● ● ● ●]",
+      "explanation": "2 dots plus 3 dots equals 5 dots altogether."
+    },
+    {
+      "example_number": 2,
+      "equation": "4 + 4 = 8",
+      "visual_representation": "[★ ★ ★ ★] + [★ ★ ★ ★] = [★ ★ ★ ★ ★ ★ ★ ★]",
+      "explanation": "4 stars and 4 more stars give a total of 8 stars."
+    },
+    {
+      "example_number": 3,
+      "equation": "6 + 1 = 7",
+      "visual_representation": "[■ ■ ■ ■ ■ ■] + [■] = [■ ■ ■ ■ ■ ■ ■]",
+      "explanation": "Adding 1 to any number gives the very next number: 6 + 1 = 7."
+    },
+    {
+      "example_number": 4,
+      "equation": "5 + 0 = 5",
+      "visual_representation": "[▲ ▲ ▲ ▲ ▲] + [] = [▲ ▲ ▲ ▲ ▲]",
+      "explanation": "Adding 0 to any number keeps the number the same: 5 + 0 = 5."
+    }
+  ],
+  "classroom_activities": [
+    {
+      "activity_name": "Roll and Add",
+      "description": "Students roll two dice, write down the two numbers, and add them together to get the total."
+    },
+    {
+      "activity_name": "Human Number Line Jump",
+      "description": "A student stands on the starting number on a floor mat and takes forward steps equal to the second number to land on the answer."
+    }
+  ],
+  "assessment_questions": [
+    {
+      "question_id": "c2_add_q1",
+      "question": "What is 4 + 3?",
+      "expected_answer": "7",
+      "type": "short_answer"
+    },
+    {
+      "question_id": "c2_add_q2",
+      "question": "If you have 5 candies and get 2 more, how many candies do you have in total?",
+      "expected_answer": "7",
+      "type": "word_problem"
+    },
+    {
+      "question_id": "c2_add_q3",
+      "question": "Complete the sum: 6 + ___ = 8",
+      "expected_answer": "2",
+      "type": "fill_in_the_blank"
+    }
+  ],
+  "homework": {
+    "title": "Addition Explorer Worksheet",
+    "tasks": [
+      "Solve the following 5 sums in your notebook: 3 + 3, 5 + 4, 7 + 1, 2 + 6, 4 + 5.",
+      "Draw 3 circles, then draw 4 triangles. Count all shapes together and write the total number.",
+      "Create one addition story at home with fruits or books and share it tomorrow."
+    ]
+  }
+}

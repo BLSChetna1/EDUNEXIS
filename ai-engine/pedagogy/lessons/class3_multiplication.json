@@ -1,0 +1,115 @@
+{
+  "class": "Class 3",
+  "subject": "Mathematics",
+  "topic": "Multiplication Tables 2-5",
+  "duration": "45 minutes",
+  "learning_objectives": [
+    "Understand multiplication as repeated addition of equal groups",
+    "Memorize and recite multiplication tables of 2, 3, 4, and 5",
+    "Identify multiplication patterns and arrays using visual grids",
+    "Solve simple single-step multiplication word problems"
+  ],
+  "introduction": "Begin by showing 3 groups of 2 pencils. Ask students: 'How many pencils in each group? How many groups? Let us add: 2 + 2 + 2 = 6.' Explain that instead of adding repeatedly, we can multiply: 3 times 2 is 6 (3 x 2 = 6). Multiplication is quick adding of equal groups!",
+  "teacher_activity": [
+    "Arrange physical counters into rows and columns (arrays) on the table.",
+    "Write repeated addition on the blackboard and convert it into multiplication sentences (e.g. 4 + 4 + 4 = 3 x 4 = 12).",
+    "Lead rhythmic chanting of tables 2, 3, 4, and 5 with clapping patterns.",
+    "Demonstrate skip-counting on a 1-50 number chart (e.g., skip by 2s, 3s, 5s)."
+  ],
+  "student_activity": [
+    "Build arrays using counting stones or bottle caps (e.g., 4 rows of 3 caps).",
+    "Skip-count aloud in pairs while jumping on floor tiles.",
+    "Write out multiplication facts in grid notebooks.",
+    "Solve flashcard challenges with partners."
+  ],
+  "lesson_steps": [
+    {
+      "step_number": 1,
+      "title": "Warm-up & Repeated Addition Story",
+      "duration": "7 minutes",
+      "description": "Show groups of leaves/stones and illustrate how 4 groups of 3 equals 12."
+    },
+    {
+      "step_number": 2,
+      "title": "Introducing the Multiplication Symbol (x)",
+      "duration": "8 minutes",
+      "description": "Explain the multiplication sign (x) as 'groups of' or 'times'."
+    },
+    {
+      "step_number": 3,
+      "title": "Exploring Tables 2 and 3 with Arrays",
+      "duration": "12 minutes",
+      "description": "Draw dot grids for 2x and 3x tables and practice skip counting."
+    },
+    {
+      "step_number": 4,
+      "title": "Exploring Tables 4 and 5 with Skip Counting",
+      "duration": "12 minutes",
+      "description": "Connect 5x table to the 5 fingers on each hand and clock minutes."
+    },
+    {
+      "step_number": 5,
+      "title": "Quick Quiz & Wrap-up",
+      "duration": "6 minutes",
+      "description": "Rapid-fire verbal questions on tables 2 to 5."
+    }
+  ],
+  "examples": [
+    {
+      "example_number": 1,
+      "equation": "3 x 2 = 6",
+      "visual_representation": "[● ●] [● ●] [● ●] = 6 dots",
+      "explanation": "3 groups of 2 equals 6 (2 + 2 + 2 = 6)."
+    },
+    {
+      "example_number": 2,
+      "equation": "4 x 3 = 12",
+      "visual_representation": "[★★★] [★★★] [★★★] [★★★] = 12 stars",
+      "explanation": "4 groups of 3 stars equals 12 stars."
+    },
+    {
+      "example_number": 3,
+      "equation": "5 x 4 = 20",
+      "visual_representation": "[■■■■] [■■■■] [■■■■] [■■■■] [■■■■] = 20 blocks",
+      "explanation": "5 groups of 4 equals 20."
+    }
+  ],
+  "classroom_activities": [
+    {
+      "activity_name": "Multiplication Relay",
+      "description": "Teams run to the blackboard, solve one multiplication fact (e.g., 4 x 5), and hand the chalk to the next teammate."
+    },
+    {
+      "activity_name": "Array Builder",
+      "description": "Students roll two dice (e.g., 3 and 4) and draw a 3x4 grid of squares in their notebook, counting the total."
+    }
+  ],
+  "assessment_questions": [
+    {
+      "question_id": "c3_mul_q1",
+      "question": "What is 4 x 3?",
+      "expected_answer": "12",
+      "type": "short_answer"
+    },
+    {
+      "question_id": "c3_mul_q2",
+      "question": "A bicycle has 2 wheels. How many wheels do 5 bicycles have in total?",
+      "expected_answer": "10",
+      "type": "word_problem"
+    },
+    {
+      "question_id": "c3_mul_q3",
+      "question": "Complete the pattern: 5, 10, 15, 20, ___",
+      "expected_answer": "25",
+      "type": "fill_in_the_blank"
+    }
+  ],
+  "homework": {
+    "title": "Multiplication Table Champion",
+    "tasks": [
+      "Write the table of 3 and table of 4 in your notebook neatly.",
+      "Solve: 2 x 8, 3 x 7, 4 x 6, 5 x 9.",
+      "Count the total number of table legs in your home using multiplication (e.g., 3 tables x 4 legs)."
+    ]
+  }
+}

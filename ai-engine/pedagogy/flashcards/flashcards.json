@@ -1,0 +1,226 @@
+{
+  "numbers_1_10": [
+    {
+      "id": "fc_num_1",
+      "front": "1 - One",
+      "back": "★ (One star)",
+      "numeral": 1,
+      "word": "One",
+      "visual": "★",
+      "hint": "One sun in the sky"
+    },
+    {
+      "id": "fc_num_2",
+      "front": "2 - Two",
+      "back": "★★ (Two stars)",
+      "numeral": 2,
+      "word": "Two",
+      "visual": "★★",
+      "hint": "Two eyes on your face"
+    },
+    {
+      "id": "fc_num_3",
+      "front": "3 - Three",
+      "back": "★★★ (Three stars)",
+      "numeral": 3,
+      "word": "Three",
+      "visual": "★★★",
+      "hint": "Three wheels on an auto-rickshaw"
+    },
+    {
+      "id": "fc_num_4",
+      "front": "4 - Four",
+      "back": "★★★★ (Four stars)",
+      "numeral": 4,
+      "word": "Four",
+      "visual": "★★★★",
+      "hint": "Four legs on a chair"
+    },
+    {
+      "id": "fc_num_5",
+      "front": "5 - Five",
+      "back": "★★★★★ (Five stars)",
+      "numeral": 5,
+      "word": "Five",
+      "visual": "★★★★★",
+      "hint": "Five fingers on one hand"
+    },
+    {
+      "id": "fc_num_6",
+      "front": "6 - Six",
+      "back": "★★★★★★ (Six stars)",
+      "numeral": 6,
+      "word": "Six",
+      "visual": "★★★★★★",
+      "hint": "Six legs on an insect"
+    },
+    {
+      "id": "fc_num_7",
+      "front": "7 - Seven",
+      "back": "★★★★★★★ (Seven stars)",
+      "numeral": 7,
+      "word": "Seven",
+      "visual": "★★★★★★★",
+      "hint": "Seven colors in a rainbow"
+    },
+    {
+      "id": "fc_num_8",
+      "front": "8 - Eight",
+      "back": "★★★★★★★★ (Eight stars)",
+      "numeral": 8,
+      "word": "Eight",
+      "visual": "★★★★★★★★",
+      "hint": "Eight legs on a spider"
+    },
+    {
+      "id": "fc_num_9",
+      "front": "9 - Nine",
+      "back": "★★★★★★★★★ (Nine stars)",
+      "numeral": 9,
+      "word": "Nine",
+      "visual": "★★★★★★★★★",
+      "hint": "Nine single-digit numbers before ten"
+    },
+    {
+      "id": "fc_num_10",
+      "front": "10 - Ten",
+      "back": "★★★★★★★★★★ (Ten stars)",
+      "numeral": 10,
+      "word": "Ten",
+      "visual": "★★★★★★★★★★",
+      "hint": "Ten fingers on both hands"
+    }
+  ],
+  "fruits": [
+    {
+      "id": "fc_frt_1",
+      "front": "Apple 🍎",
+      "back": "Red, sweet, and crunchy fruit",
+      "fruit_name": "Apple",
+      "color": "Red",
+      "taste": "Sweet",
+      "sentence": "An apple a day keeps the doctor away."
+    },
+    {
+      "id": "fc_frt_2",
+      "front": "Banana 🍌",
+      "back": "Yellow, sweet, and soft to peel",
+      "fruit_name": "Banana",
+      "color": "Yellow",
+      "taste": "Sweet",
+      "sentence": "Monkeys love eating yellow bananas."
+    },
+    {
+      "id": "fc_frt_3",
+      "front": "Mango 🥭",
+      "back": "Yellow, juicy, king of fruits",
+      "fruit_name": "Mango",
+      "color": "Yellow",
+      "taste": "Sweet and juicy",
+      "sentence": "Mango is a delicious summer fruit."
+    },
+    {
+      "id": "fc_frt_4",
+      "front": "Orange 🍊",
+      "back": "Orange-colored, round, and juicy",
+      "fruit_name": "Orange",
+      "color": "Orange",
+      "taste": "Sweet and tangy",
+      "sentence": "An orange gives fresh and healthy juice."
+    },
+    {
+      "id": "fc_frt_5",
+      "front": "Papaya 🍈",
+      "back": "Orange inside with black seeds",
+      "fruit_name": "Papaya",
+      "color": "Green outside, Orange inside",
+      "taste": "Sweet",
+      "sentence": "Papaya is very good for digestion."
+    },
+    {
+      "id": "fc_frt_6",
+      "front": "Grapes 🍇",
+      "back": "Small, green or purple, grows in bunches",
+      "fruit_name": "Grapes",
+      "color": "Green / Purple",
+      "taste": "Sweet and sour",
+      "sentence": "Grapes grow together in sweet bunches."
+    },
+    {
+      "id": "fc_frt_7",
+      "front": "Watermelon 🍉",
+      "back": "Green outside, red and juicy inside",
+      "fruit_name": "Watermelon",
+      "color": "Red inside",
+      "taste": "Sweet and watery",
+      "sentence": "Watermelon is cold and refreshing."
+    },
+    {
+      "id": "fc_frt_8",
+      "front": "Guava 🍐",
+      "back": "Green fruit with sweet white or pink flesh",
+      "fruit_name": "Guava",
+      "color": "Green",
+      "taste": "Sweet",
+      "sentence": "Guava is rich in Vitamin C."
+    }
+  ],
+  "basic_addition": [
+    {
+      "id": "fc_add_1",
+      "front": "1 + 1 = ?",
+      "back": "2",
+      "visual": "● + ● = ● ● (2)",
+      "explanation": "1 dot plus 1 dot equals 2 dots."
+    },
+    {
+      "id": "fc_add_2",
+      "front": "2 + 2 = ?",
+      "back": "4",
+      "visual": "● ● + ● ● = ● ● ● ● (4)",
+      "explanation": "2 plus 2 equals 4."
+    },
+    {
+      "id": "fc_add_3",
+      "front": "3 + 2 = ?",
+      "back": "5",
+      "visual": "● ● ● + ● ● = ● ● ● ● ● (5)",
+      "explanation": "3 plus 2 equals 5."
+    },
+    {
+      "id": "fc_add_4",
+      "front": "4 + 3 = ?",
+      "back": "7",
+      "visual": "● ● ● ● + ● ● ● = ● ● ● ● ● ● ● (7)",
+      "explanation": "4 plus 3 equals 7."
+    },
+    {
+      "id": "fc_add_5",
+      "front": "5 + 5 = ?",
+      "back": "10",
+      "visual": "★★★★★ + ★★★★★ = 10 stars",
+      "explanation": "5 fingers + 5 fingers = 10 fingers."
+    },
+    {
+      "id": "fc_add_6",
+      "front": "6 + 2 = ?",
+      "back": "8",
+      "visual": "●●●●●● + ●● = ●●●●●●●● (8)",
+      "explanation": "6 plus 2 equals 8."
+    },
+    {
+      "id": "fc_add_7",
+      "front": "7 + 3 = ?",
+      "back": "10",
+      "visual": "7 + 3 = 10",
+      "explanation": "Count 3 steps forward from 7 to reach 10."
+    },
+    {
+      "id": "fc_add_8",
+      "front": "8 + 1 = ?",
+      "back": "9",
+      "visual": "8 + 1 = 9",
+      "explanation": "Adding 1 gives the next number: 9."
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "class": "Class 3",
+  "subject": "Environmental Studies / EVS",
+  "topic": "Plants and Animals Around Us",
+  "instructions": "Answer the following questions based on plants, animals, and taking care of our environment.",
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Which part of the plant grows below the ground and fixes the plant to the soil?",
+      "question_type": "multiple_choice",
+      "options": ["Leaf", "Flower", "Roots", "Fruit"],
+      "correct_answer": "Roots",
+      "explanation": "Roots grow underground to absorb water and anchor the plant."
+    },
+    {
+      "question_number": 2,
+      "question": "Which of these animals is a Domestic Animal that gives us milk?",
+      "question_type": "multiple_choice",
+      "options": ["Lion", "Cow", "Tiger", "Fox"],
+      "correct_answer": "Cow",
+      "explanation": "A cow is a domestic animal raised by humans."
+    },
+    {
+      "question_number": 3,
+      "question": "Green leaves prepare food for the plant with the help of sunlight and air.",
+      "question_type": "true_false",
+      "options": ["True", "False"],
+      "correct_answer": "True",
+      "explanation": "Leaves make food through photosynthesis."
+    },
+    {
+      "question_number": 4,
+      "question": "Which animal lives both on land and in water?",
+      "question_type": "multiple_choice",
+      "options": ["Frog", "Monkey", "Sparrow", "Camel"],
+      "correct_answer": "Frog",
+      "explanation": "A frog is an amphibian that can live on land and in water."
+    },
+    {
+      "question_number": 5,
+      "question": "What is one simple way we can help nature at home or school?",
+      "question_type": "multiple_choice",
+      "options": ["Pluck leaves unnecessarily", "Water plants and feed birds", "Throw plastic on the grass", "Waste tap water"],
+      "correct_answer": "Water plants and feed birds",
+      "explanation": "Caring for plants and birds helps preserve our environment."
+    }
+  ],
+  "answer_key": {
+    "1": "Roots",
+    "2": "Cow",
+    "3": "True",
+    "4": "Frog",
+    "5": "Water plants and feed birds"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "class": "Class 1",
+  "subject": "Language",
+  "topic": "Fruits",
+  "instructions": "Look at the clues and fruit pictures. Choose or write the correct fruit name or color.",
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "I am long and yellow. Monkeys love to eat me. What fruit am I?",
+      "question_type": "riddle",
+      "options": ["Apple", "Banana", "Orange", "Grapes"],
+      "correct_answer": "Banana",
+      "explanation": "A banana is yellow, long, and loved by monkeys."
+    },
+    {
+      "question_number": 2,
+      "question": "What is the color of a ripe fresh Apple?",
+      "question_type": "multiple_choice",
+      "options": ["Blue", "Red", "Black", "White"],
+      "correct_answer": "Red",
+      "explanation": "A ripe apple is bright red."
+    },
+    {
+      "question_number": 3,
+      "question": "Which fruit is round, juicy, and named after its own color?",
+      "question_type": "multiple_choice",
+      "options": ["Mango", "Papaya", "Orange", "Banana"],
+      "correct_answer": "Orange",
+      "explanation": "An orange fruit is orange in color and named Orange."
+    },
+    {
+      "question_number": 4,
+      "question": "Complete the missing letter in this fruit name: M _ N G O",
+      "question_type": "fill_in_the_blank",
+      "options": ["A", "E", "I", "U"],
+      "correct_answer": "A",
+      "explanation": "The correct spelling is M-A-N-G-O (Mango)."
+    },
+    {
+      "question_number": 5,
+      "question": "These tiny fruits grow in bunches and can be green or purple. What are they?",
+      "question_type": "multiple_choice",
+      "options": ["Watermelon", "Grapes", "Papaya", "Coconut"],
+      "correct_answer": "Grapes",
+      "explanation": "Grapes grow in clusters or bunches on vines."
+    }
+  ],
+  "answer_key": {
+    "1": "Banana",
+    "2": "Red",
+    "3": "Orange",
+    "4": "A",
+    "5": "Grapes"
+  }
+}

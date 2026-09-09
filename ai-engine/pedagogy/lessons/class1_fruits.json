@@ -1,0 +1,127 @@
+{
+  "class": "Class 1",
+  "subject": "Language",
+  "topic": "Fruits",
+  "duration": "40 minutes",
+  "learning_objectives": [
+    "Identify and name common fruits in English",
+    "Describe fruits by their color and simple shape",
+    "Develop basic conversational vocabulary using phrases like 'This is an apple'",
+    "Improve pronunciation and phonetic awareness of fruit names"
+  ],
+  "vocabulary": [
+    {
+      "word": "Apple",
+      "meaning": "A round red or green fruit that is sweet and crunchy.",
+      "example_sentence": "An apple is red and sweet."
+    },
+    {
+      "word": "Banana",
+      "meaning": "A long curved yellow fruit that is soft to eat.",
+      "example_sentence": "A banana is yellow and easy to peel."
+    },
+    {
+      "word": "Mango",
+      "meaning": "A delicious sweet yellow fruit known as the king of fruits.",
+      "example_sentence": "The ripe mango is juicy and yellow."
+    },
+    {
+      "word": "Orange",
+      "meaning": "A round orange-colored fruit with sweet and tangy juice.",
+      "example_sentence": "An orange gives tasty juice."
+    },
+    {
+      "word": "Papaya",
+      "meaning": "A large fruit with orange flesh and black seeds inside.",
+      "example_sentence": "Papaya is sweet and healthy."
+    },
+    {
+      "word": "Grapes",
+      "meaning": "Small round green or purple fruits that grow in bunches.",
+      "example_sentence": "Grapes grow in bunches."
+    }
+  ],
+  "introduction": "Bring a basket filled with real fruits or picture cards. Show the basket to the children and ask them to share the names of fruits they like to eat. Tell them that today we will learn the English names, colors, and tastes of these delicious fruits.",
+  "teacher_activity": [
+    "Show colorful flashcards for each fruit and say the fruit name clearly and loudly.",
+    "Ask students about the color of each fruit (e.g., 'What color is the banana?').",
+    "Model the sentence pattern: 'This is a/an [fruit name].'",
+    "Lead a repeat-after-me pronunciation drill for all fruit names."
+  ],
+  "student_activity": [
+    "Look at flashcards and repeat fruit names after the teacher.",
+    "Identify and name the colors of different fruits.",
+    "Form simple sentences: 'I like apples' or 'This is a mango.'",
+    "Match picture cards of fruits with color cards."
+  ],
+  "lesson_steps": [
+    {
+      "step_number": 1,
+      "title": "Introduction & Fruit Basket Reveal",
+      "duration": "5 minutes",
+      "description": "Show the fruit basket to spark curiosity and ask students to name familiar fruits."
+    },
+    {
+      "step_number": 2,
+      "title": "Vocabulary & Pronunciation (Apple, Banana, Mango)",
+      "duration": "10 minutes",
+      "description": "Introduce the first set of fruits with focus on correct pronunciation and color identification."
+    },
+    {
+      "step_number": 3,
+      "title": "Vocabulary & Pronunciation (Orange, Papaya, Grapes)",
+      "duration": "10 minutes",
+      "description": "Introduce the second set of fruits with focus on sizes, colors, and textures."
+    },
+    {
+      "step_number": 4,
+      "title": "Sentence Building & Practice",
+      "duration": "10 minutes",
+      "description": "Guide students to practice speaking: 'This is a red apple', 'This is a yellow banana'."
+    },
+    {
+      "step_number": 5,
+      "title": "Wrap-up Game",
+      "duration": "5 minutes",
+      "description": "Play a quick guessing game: 'I am thinking of a yellow fruit... what is it?'"
+    }
+  ],
+  "classroom_activities": [
+    {
+      "activity_name": "Fruit Basket Toss",
+      "description": "The teacher gently tosses a soft ball to a student and says a fruit color. The student names a fruit of that color and tosses the ball back."
+    },
+    {
+      "activity_name": "Fruit & Color Match",
+      "description": "In small groups, children match fruit pictures to color swatch cards (red, yellow, orange, green, purple)."
+    }
+  ],
+  "assessment_questions": [
+    {
+      "question_id": "c1_frt_q1",
+      "question": "What color is a ripe banana?",
+      "expected_answer": "Yellow",
+      "type": "oral"
+    },
+    {
+      "question_id": "c1_frt_q2",
+      "question": "Which fruit is round and shares its name with its color?",
+      "expected_answer": "Orange",
+      "type": "short_answer"
+    },
+    {
+      "question_id": "c1_frt_q3",
+      "question": "Say the sentence aloud: 'This is an ________.' (show picture of Apple)",
+      "expected_answer": "Apple",
+      "type": "speaking"
+    }
+  ],
+  "homework": {
+    "title": "My Favorite Fruit Fun",
+    "tasks": [
+      "Tell your family members the English names of 3 fruits in your kitchen.",
+      "Draw and color your favorite fruit on a sheet of paper.",
+      "Practice saying: 'I like to eat [fruit name]' at home."
+    ]
+  }
+}

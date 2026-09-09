@@ -1,0 +1,55 @@
+{
+  "class": "Class 2",
+  "subject": "Mathematics",
+  "topic": "Basic Addition",
+  "instructions": "Solve the addition problems carefully. Use the pictures, your fingers, or drawings to find the correct total.",
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Calculate the sum: 3 + 4 = ?",
+      "question_type": "multiple_choice",
+      "options": ["5", "6", "7", "8"],
+      "correct_answer": "7",
+      "explanation": "3 + 4 = 7."
+    },
+    {
+      "question_number": 2,
+      "question": "Priya has 5 pencils. Her brother gives her 3 more pencils. How many pencils does Priya have now?",
+      "question_type": "word_problem",
+      "options": ["6", "7", "8", "9"],
+      "correct_answer": "8",
+      "explanation": "5 pencils + 3 pencils = 8 pencils altogether."
+    },
+    {
+      "question_number": 3,
+      "question": "Find the missing number to make the equation true: 6 + ___ = 9",
+      "question_type": "fill_in_the_blank",
+      "options": ["2", "3", "4", "5"],
+      "correct_answer": "3",
+      "explanation": "6 + 3 = 9."
+    },
+    {
+      "question_number": 4,
+      "question": "Which of the following additions equals 10?",
+      "question_type": "multiple_choice",
+      "options": ["4 + 5", "5 + 5", "6 + 3", "2 + 7"],
+      "correct_answer": "5 + 5",
+      "explanation": "5 + 5 = 10, whereas 4+5=9, 6+3=9, 2+7=9."
+    },
+    {
+      "question_number": 5,
+      "question": "What is 7 + 0?",
+      "question_type": "short_answer",
+      "options": ["0", "7", "8", "70"],
+      "correct_answer": "7",
+      "explanation": "Adding 0 to any number leaves the number unchanged: 7 + 0 = 7."
+    }
+  ],
+  "answer_key": {
+    "1": "7",
+    "2": "8",
+    "3": "3",
+    "4": "5 + 5",
+    "5": "7"
+  }
+}

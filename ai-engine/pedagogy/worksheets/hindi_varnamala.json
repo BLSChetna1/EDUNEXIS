@@ -1,0 +1,55 @@
+{
+  "class": "Class 3",
+  "subject": "Hindi",
+  "topic": "Varnamala and Matras (वर्णमाला और मात्राएँ)",
+  "instructions": "नीचे दिए गए प्रश्नों को ध्यानपूर्वक पढ़ें और सही विकल्प अथवा उत्तर चुनें।",
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "वर्णमाला में 'स्वर' वर्ण कौन-सा है? (Swar)",
+      "question_type": "multiple_choice",
+      "options": ["क", "आ", "म", "र"],
+      "correct_answer": "आ",
+      "explanation": "'आ' एक स्वर वर्ण है जबकि क, म, र व्यंजन हैं।"
+    },
+    {
+      "question_number": 2,
+      "question": "व्यंजन 'म' में 'आ' (ा) की मात्रा और 'ल' में 'आ' (ा) की मात्रा जोड़ने पर कौन-सा शब्द बनेगा?",
+      "question_type": "word_formation",
+      "options": ["मिल", "माला", "मैल", "मूल"],
+      "correct_answer": "माला",
+      "explanation": "म + ा + ल + ा = माला।"
+    },
+    {
+      "question_number": 3,
+      "question": "'किताब' शब्द में 'क' पर कौन-सी मात्रा लगी है?",
+      "question_type": "multiple_choice",
+      "options": ["आ की मात्रा (ा)", "छोटी इ की मात्रा (ि)", "बड़ी ई की मात्रा (ी)", "उ की मात्रा (ु)"],
+      "correct_answer": "छोटी इ की मात्रा (ि)",
+      "explanation": "'क' पर छोटी 'ि' की मात्रा लगी है (कि-ताब)।"
+    },
+    {
+      "question_number": 4,
+      "question": "सही वर्तनी (Spelling) वाला शब्द चुनिए:",
+      "question_type": "multiple_choice",
+      "options": ["मछली", "मछलि", "मछलीी", "मछल"],
+      "correct_answer": "मछली",
+      "explanation": "मछली शब्द में 'ल' पर बड़ी ई (ी) की मात्रा आती है।"
+    },
+    {
+      "question_number": 5,
+      "question": "रिक्त स्थान में सही मात्रा भरकर शब्द पूरा करें: स _ र ज (Sun)",
+      "question_type": "fill_in_the_blank",
+      "options": ["ू (बड़ा ऊ)", "ि (छोटी इ)", "ा (आ)", "े (ए)"],
+      "correct_answer": "ू (बड़ा ऊ)",
+      "explanation": "स + ू + र + ज = सूरज।"
+    }
+  ],
+  "answer_key": {
+    "1": "आ",
+    "2": "माला",
+    "3": "छोटी इ की मात्रा (ि)",
+    "4": "मछली",
+    "5": "ू (बड़ा ऊ)"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "class": "Class 3",
+  "subject": "Mathematics",
+  "topic": "Multiplication Tables 2-5",
+  "instructions": "Solve each multiplication problem carefully. Use skip counting, grouping, or arrays to find the answers.",
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What is 3 x 4?",
+      "question_type": "multiple_choice",
+      "options": ["7", "10", "12", "15"],
+      "correct_answer": "12",
+      "explanation": "3 groups of 4 = 4 + 4 + 4 = 12."
+    },
+    {
+      "question_number": 2,
+      "question": "A chair has 4 legs. How many legs do 5 chairs have in total?",
+      "question_type": "word_problem",
+      "options": ["15", "18", "20", "24"],
+      "correct_answer": "20",
+      "explanation": "5 chairs x 4 legs each = 20 legs in total."
+    },
+    {
+      "question_number": 3,
+      "question": "Fill in the missing number in the 5x skip count: 5, 10, 15, ___, 25.",
+      "question_type": "sequence",
+      "options": ["16", "18", "20", "22"],
+      "correct_answer": "20",
+      "explanation": "Counting in steps of 5: 15 + 5 = 20."
+    },
+    {
+      "question_number": 4,
+      "question": "Calculate: 2 x 9 = ?",
+      "question_type": "short_answer",
+      "options": ["14", "16", "18", "20"],
+      "correct_answer": "18",
+      "explanation": "2 x 9 = 18."
+    },
+    {
+      "question_number": 5,
+      "question": "Which multiplication gives 15?",
+      "question_type": "multiple_choice",
+      "options": ["2 x 7", "3 x 5", "4 x 4", "5 x 4"],
+      "correct_answer": "3 x 5",
+      "explanation": "3 x 5 = 15."
+    }
+  ],
+  "answer_key": {
+    "1": "12",
+    "2": "20",
+    "3": "20",
+    "4": "18",
+    "5": "3 x 5"
+  }
+}
