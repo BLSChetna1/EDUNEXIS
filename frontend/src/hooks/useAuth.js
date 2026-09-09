@@ -1,41 +1,80 @@
 /**
- * Custom hook: useAuth (Placeholder)
- * Manages client-side user context and role-based permissions
+ * Custom hook: useAuth
+ * Manages client-side teacher profile session and authentication state.
+ * Interacts with authService, separated cleanly for future FastAPI JWT integration.
  */
 
 import { useState, useEffect } from "react";
+import { DEMO_TEACHER } from "../utils/constants";
+import authService from "../services/authService";
 
 export function useAuth() {
   const [user, setUser] = useState(null);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Placeholder: Initialize session / profile from local state or backend
-    const savedUser = localStorage.getItem("edunexis_user");
-    if (savedUser) {
-      try {
-        setUser(JSON.parse(savedUser));
-      } catch {
-        setUser(null);
+    try {
+      const sessionUser = authService.getCurrentTeacher();
+      if (sessionUser) {
+        setUser(sessionUser);
       }
+    } catch (err) {
+      console.error("Failed to load saved teacher session", err);
+    } finally {
+      setIsLoading(false);
     }
   }, []);
 
-  const login = (userData) => {
-    setUser(userData);
-    localStorage.setItem("edunexis_user", JSON.stringify(userData));
+  const login = async (credentials) => {
+    setIsLoading(true);
+    try {
+      const profile = await authService.loginTeacher(credentials);
+      setUser(profile);
+      return profile;
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const register = async (registrationData) => {
+    setIsLoading(true);
+    try {
+      const profile = await authService.registerTeacher(registrationData);
+      setUser(profile);
+      return profile;
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const logout = () => {
+    authService.logoutTeacher();
     setUser(null);
-    localStorage.removeItem("edunexis_user");
+  };
+
+  const updateTeacherLanguage = (langCode) => {
+    if (!user) return;
+    const updated = authService.updateTeacherProfile({ targetLanguage: langCode });
+    setUser(updated);
+  };
+
+  const updateProfile = (updates) => {
+    const updated = authService.updateTeacherProfile(updates);
+    setUser(updated);
+    return updated;
   };
 
   return {
-    user,
+    user: user || DEMO_TEACHER, // Fallback to demo teacher for uninterrupted testing
+    rawUser: user, // null if no real login occurred
     isAuthenticated: Boolean(user),
     isLoading,
     login,
+    register,
     logout,
+    updateTeacherLanguage,
+    updateProfile,
   };
 }
+
+export default useAuth;

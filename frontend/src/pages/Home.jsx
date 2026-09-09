@@ -1,5 +1,5 @@
 import React from "react";
-import { APP_NAME, APP_TAGLINE, SIH_EDITION } from "../utils/constants";
+import { APP_NAME, APP_TAGLINE, APP_SUBTITLE } from "../utils/constants";
 
 export function Home() {
   const modules = [
@@ -46,7 +46,7 @@ export function Home() {
       <section className="hero-section">
         <div className="badge-pill">
           <span className="badge-sparkle">✦</span>
-          <span>{SIH_EDITION} • Unified Repository</span>
+          <span>{APP_SUBTITLE} • Unified Platform</span>
         </div>
 
         <h1 className="hero-title">{APP_NAME}</h1>
@@ -60,7 +60,7 @@ export function Home() {
 
         <div className="hero-actions">
           <a
-            href="http://localhost:8000/docs"
+            href="/docs"
             target="_blank"
             rel="noopener noreferrer"
             className="btn btn-primary"
