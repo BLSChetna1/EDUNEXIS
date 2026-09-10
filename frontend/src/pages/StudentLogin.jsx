@@ -6,7 +6,7 @@
 
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { APP_NAME, ROUTES, AVAILABLE_CLASSES, STUDENT_SECTIONS } from "../utils/constants";
+import { APP_NAME, ROUTES, AVAILABLE_CLASSES, STUDENT_SECTIONS, SUPPORTED_LANGUAGES } from "../utils/constants";
 import { useStudentAuth } from "../hooks/useStudentAuth";
 import Button from "../components/Button";
 
@@ -143,7 +143,7 @@ export function StudentLogin() {
               <span className="demo-sparkle">⚡</span>
               <div>
                 <strong>Explore as Demo Student</strong>
-                <p>Loads Asha Murmu (Class 3-A, Santhali Medium) instantly.</p>
+                <p>Loads Asha Murmu (Class 3-A, Santali Medium) instantly.</p>
               </div>
             </div>
             <button
@@ -371,10 +371,11 @@ export function StudentLogin() {
                   value={regForm.preferredLanguage}
                   onChange={(e) => setRegForm({ ...regForm, preferredLanguage: e.target.value })}
                 >
-                  <option value="sat">Santhali (संथाली)</option>
-                  <option value="hoc">Ho (हो)</option>
-                  <option value="unr">Mundari (मुंडारी)</option>
-                  <option value="hi">Hindi (हिन्दी)</option>
+                  {SUPPORTED_LANGUAGES.map((l) => (
+                    <option key={l.code} value={l.code}>
+                      {l.name}
+                    </option>
+                  ))}
                 </select>
               </div>
             </div>

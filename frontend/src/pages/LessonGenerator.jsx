@@ -3,7 +3,7 @@ import { useSearchParams, useNavigate, Link } from "react-router-dom";
 import PageHeader from "../components/PageHeader";
 import Button from "../components/Button";
 import { useAuth } from "../hooks/useAuth";
-import { PRIMARY_GRADES, SUPPORTED_LANGUAGES, ROUTES } from "../utils/constants";
+import { PRIMARY_GRADES, SUPPORTED_LANGUAGES, ROUTES, SUBJECTS } from "../utils/constants";
 import { MOCK_LESSON_PLAN } from "../services/mockData";
 import lessonService from "../services/lessonService";
 
@@ -14,7 +14,7 @@ export function LessonGenerator() {
   const editId = searchParams.get("edit");
 
   const [selectedGrade, setSelectedGrade] = useState("2");
-  const [selectedSubject, setSelectedSubject] = useState("Environmental Studies (EVS)");
+  const [selectedSubject, setSelectedSubject] = useState(SUBJECTS[0] || "Santali");
   const [topicPrompt, setTopicPrompt] = useState("जंगल के पेड़, पत्ते और फूल (Forest Trees & Plants)");
   const [selectedLang, setSelectedLang] = useState(user?.targetLanguage || "sat");
   const [isGenerating, setIsGenerating] = useState(false);
@@ -70,7 +70,7 @@ export function LessonGenerator() {
         subject: selectedSubject,
         duration: "40 Minutes",
         targetLanguage: selectedLang,
-        targetLanguageName: `${currentLang.name} (${currentLang.nativeName.split("/")[0].trim()})`,
+        targetLanguageName: currentLang.name,
         flnCompetency: `FLN-${selectedSubject.substring(0, 3).toUpperCase()}-0${selectedGrade}: Foundational understanding and vocabulary in ${currentLang.name}`,
         summary: `Interactive bilingual lesson for ${selectedSubject} in ${currentLang.name}, designed for Grade ${selectedGrade} foundational competencies.`,
         learningObjectives: [
@@ -113,7 +113,7 @@ export function LessonGenerator() {
       <PageHeader
         title="AI Vernacular Lesson Generator"
         subtitle="Generate simplified, multilingual, age-appropriate lesson plans aligned with NIPUN Bharat FLN competencies."
-        badge={`Target: ${currentLang.name}`}
+        badge={`Language: ${currentLang.name}`}
       />
 
       {/* Save Notification Toast */}
@@ -138,9 +138,9 @@ export function LessonGenerator() {
         <h2 className="config-title">⚙️ Lesson Criteria &amp; Foundational Competencies</h2>
 
         <div className="config-inputs-grid">
-          {/* Grade Level */}
+          {/* Class Level */}
           <div className="config-group">
-            <label htmlFor="grade-select" className="config-label">कक्षा (Grade Level):</label>
+            <label htmlFor="grade-select" className="config-label">कक्षा (Class):</label>
             <select
               id="grade-select"
               className="styled-select"
@@ -164,15 +164,17 @@ export function LessonGenerator() {
               value={selectedSubject}
               onChange={(e) => setSelectedSubject(e.target.value)}
             >
-              <option value="Language & Literacy">Language & Literacy (भाषा)</option>
-              <option value="Mathematics / Ganit">Mathematics & Number Sense (गणित)</option>
-              <option value="Environmental Studies (EVS)">Environmental Studies (पर्यावरण / EVS)</option>
+              {SUBJECTS.map((sub) => (
+                <option key={sub} value={sub}>
+                  {sub}
+                </option>
+              ))}
             </select>
           </div>
 
           {/* Target Tribal Language */}
           <div className="config-group">
-            <label htmlFor="lang-select" className="config-label">मातृभाषा (Target Tribal Language):</label>
+            <label htmlFor="lang-select" className="config-label">मातृभाषा (Language):</label>
             <select
               id="lang-select"
               className="styled-select"
@@ -181,7 +183,7 @@ export function LessonGenerator() {
             >
               {SUPPORTED_LANGUAGES.map((l) => (
                 <option key={l.code} value={l.code}>
-                  {l.name} ({l.nativeName})
+                  {l.name}
                 </option>
               ))}
             </select>
@@ -224,7 +226,7 @@ export function LessonGenerator() {
             <span className="doc-type-badge">FLN Multilingual Lesson Blueprint</span>
             <h2 className="doc-title">{currentPlan.title}</h2>
             <div className="doc-meta-tags">
-              <span className="meta-tag">Grade: {currentPlan.grade || `Class ${selectedGrade}`}</span>
+              <span className="meta-tag">Class: {currentPlan.grade || `Class ${selectedGrade}`}</span>
               <span className="meta-tag">Subject: {selectedSubject}</span>
               <span className="meta-tag">Language: {currentLang.name}</span>
               <span className="meta-tag">Duration: {currentPlan.duration || "40 Minutes"}</span>
@@ -364,17 +366,6 @@ export function LessonGenerator() {
             </ul>
           </div>
         )}
-      </div>
-
-      {/* Backend Integration Note */}
-      <div className="backend-ready-notice">
-        <div className="notice-icon">🧠</div>
-        <div className="notice-content">
-          <strong>AI Engine &amp; Lesson Service Integration:</strong>
-          <p>
-            Saved locally via <code>lessonService.saveLesson</code>. Fully compatible with <code>POST /api/v1/lessons</code> for future cloud synchronization.
-          </p>
-        </div>
       </div>
     </div>
   );

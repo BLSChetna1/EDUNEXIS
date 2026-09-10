@@ -64,7 +64,7 @@ export function StudentLearningDetail() {
             <span className="btn-sparkle">🤖</span>
             <span>Ask AI About This Topic</span>
           </button>
-          <span className="ask-ai-subnote">Ask questions in Hindi or Santhali</span>
+          <span className="ask-ai-subnote">Ask questions in Hindi or Santali</span>
         </div>
       </section>
 
@@ -111,7 +111,7 @@ export function StudentLearningDetail() {
             <div>
               <h2 className="card-section-title">मातृभाषा शब्द सेतु (Mother Tongue Vocabulary Bridge)</h2>
               <p className="card-section-subtitle">
-                Understand the key terms in Hindi, Santhali, Ho, and Mundari:
+                Understand the key terms in Hindi, Santali, Ho, and Mundari:
               </p>
             </div>
           </div>
@@ -121,9 +121,9 @@ export function StudentLearningDetail() {
               <thead>
                 <tr>
                   <th>Hindi (हिंदी)</th>
-                  <th>Santhali (ᱥᱟᱱᱛᱟᱲᱤ)</th>
-                  <th>Ho (ᱣᱟᱨᱟᱝ ᱪᱤᱛᱤ)</th>
-                  <th>Mundari (ᱢᱩᱱᱰᱟᱨᱤ)</th>
+                  <th>Santali</th>
+                  <th>Ho</th>
+                  <th>Mundari</th>
                   <th>English</th>
                 </tr>
               </thead>

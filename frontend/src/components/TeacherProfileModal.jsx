@@ -5,6 +5,7 @@ import {
   SUPPORTED_LANGUAGES,
   JHARKHAND_DISTRICTS,
   AVAILABLE_CLASSES,
+  TEACHER_AVATARS,
 } from "../utils/constants";
 
 export function TeacherProfileModal({ isOpen, onClose }) {
@@ -26,10 +27,18 @@ export function TeacherProfileModal({ isOpen, onClose }) {
   const [school, setSchool] = useState(user?.school || "");
   const [district, setDistrict] = useState(user?.district || "Khunti");
   const [targetLang, setTargetLang] = useState(user?.targetLanguage || "sat");
+  const [selectedAvatar, setSelectedAvatar] = useState(user?.avatar || "👩‍🏫");
   const [classesTaught, setClassesTaught] = useState(getInitialClasses);
   const [saveNotice, setSaveNotice] = useState("");
 
   if (!isOpen) return null;
+
+  const handleAvatarPick = (avatarEmoji) => {
+    setSelectedAvatar(avatarEmoji);
+    updateProfile({ avatar: avatarEmoji });
+    setSaveNotice("अवतार सफलतापूर्वक बदला गया (Avatar updated)!");
+    setTimeout(() => setSaveNotice(""), 2500);
+  };
 
   const handleSave = (e) => {
     e.preventDefault();
@@ -39,6 +48,7 @@ export function TeacherProfileModal({ isOpen, onClose }) {
       school,
       district,
       targetLanguage: targetLang,
+      avatar: selectedAvatar,
       classesTaught: sorted,
       assignedGrades: sorted.join(", "),
     });
@@ -61,12 +71,14 @@ export function TeacherProfileModal({ isOpen, onClose }) {
     ? user.classesTaught.join(", ")
     : (user?.assignedGrades || "Class 1, Class 2, Class 3");
 
+  const avatarCategories = ["Male / Human", "Female / Human", "Cute Non-Human"];
+
   return (
     <div className="profile-modal-backdrop" onClick={onClose}>
       <div className="profile-modal-dialog" onClick={(e) => e.stopPropagation()}>
         <div className="profile-modal-header">
           <div className="profile-header-left">
-            <span className="profile-header-avatar">{user?.avatar || "👩‍🏫"}</span>
+            <span className="profile-header-avatar">{user?.avatar || selectedAvatar || "👩‍🏫"}</span>
             <div>
               <h2 className="profile-modal-title">शिक्षक प्रोफाइल (Teacher Profile)</h2>
               <span className="profile-emp-id">Employee ID: {user?.teacherId || "JH-EDU-1048"}</span>
@@ -87,6 +99,38 @@ export function TeacherProfileModal({ isOpen, onClose }) {
             <span>✅ {saveNotice}</span>
           </div>
         )}
+
+        {/* 15 Avatar Selection Palette */}
+        <div className="avatar-selection-section">
+          <label className="avatar-section-title">
+            🎨 शिक्षक अवतार चुनें (Choose Teacher Avatar - 15 Options):
+          </label>
+          <div className="avatar-groups-container">
+            {avatarCategories.map((category) => (
+              <div key={category} className="avatar-category-group">
+                <span className="avatar-cat-badge">{category}</span>
+                <div className="avatar-pills-row">
+                  {TEACHER_AVATARS.filter((a) => a.category === category).map((a) => {
+                    const isSelected = (user?.avatar || selectedAvatar) === a.emoji;
+                    return (
+                      <button
+                        key={a.id}
+                        type="button"
+                        className={`avatar-choice-btn ${isSelected ? "avatar-choice-selected" : ""}`}
+                        onClick={() => handleAvatarPick(a.emoji)}
+                        title={`${a.label} (${category})`}
+                        aria-label={a.label}
+                      >
+                        <span className="avatar-emoji">{a.emoji}</span>
+                        <span className="avatar-label-tooltip">{a.label}</span>
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
 
         {!isEditing ? (
           /* View Mode */
@@ -120,7 +164,7 @@ export function TeacherProfileModal({ isOpen, onClose }) {
               <div className="info-item">
                 <span className="info-label">सक्रिय मातृभाषा (Teaching Language)</span>
                 <strong className="info-value">
-                  {currentLangObj.name} ({currentLangObj.nativeName.split("/")[0].trim()})
+                  {currentLangObj.name}
                 </strong>
               </div>
 
@@ -136,7 +180,7 @@ export function TeacherProfileModal({ isOpen, onClose }) {
             </div>
 
             <div className="profile-notice-box">
-              <span>💾 <strong>Local Persistence Notice:</strong> Your teacher profile is saved locally for offline classroom resilience. When synced, updates automatically propagate to the Jharkhand Education MIS portal.</span>
+              <span>💾 <strong>Local Persistence Notice:</strong> Your teacher profile and chosen avatar are saved locally for offline classroom resilience. When synced, updates automatically propagate to the state portal.</span>
             </div>
 
             <div className="profile-footer-actions">
@@ -148,6 +192,7 @@ export function TeacherProfileModal({ isOpen, onClose }) {
                   setSchool(user?.school || "");
                   setDistrict(user?.district || "Khunti");
                   setTargetLang(user?.targetLanguage || "sat");
+                  setSelectedAvatar(user?.avatar || "👩‍🏫");
                   setClassesTaught(getInitialClasses());
                   setIsEditing(true);
                 }}
@@ -202,7 +247,7 @@ export function TeacherProfileModal({ isOpen, onClose }) {
               </div>
 
               <div className="form-group">
-                <label className="form-label">मातृभाषा माध्यम (Language)</label>
+                <label className="form-label">मातृभाषा (Language)</label>
                 <select
                   className="form-input form-select"
                   value={targetLang}
@@ -210,23 +255,21 @@ export function TeacherProfileModal({ isOpen, onClose }) {
                 >
                   {SUPPORTED_LANGUAGES.map((l) => (
                     <option key={l.code} value={l.code}>
-                      {l.name} ({l.nativeName})
+                      {l.name}
                     </option>
                   ))}
                 </select>
               </div>
             </div>
 
-            {/* Classes Taught Multi-Selection */}
             <div className="form-group">
-              <label className="form-label">
-                कक्षा स्तर (Classes Taught) — {classesTaught.length} selected
-              </label>
+              <label className="form-label">पढ़ाए जाने वाले कक्षा स्तर (Classes Taught)</label>
               <div className="classes-checkbox-grid">
                 {AVAILABLE_CLASSES.map((cls) => (
-                  <label key={cls} className={`class-checkbox-pill ${classesTaught.includes(cls) ? "pill-selected" : ""}`}>
+                  <label key={cls} className="checkbox-item-label">
                     <input
                       type="checkbox"
+                      className="custom-checkbox"
                       checked={classesTaught.includes(cls)}
                       onChange={() => handleToggleClass(cls)}
                     />
@@ -237,10 +280,19 @@ export function TeacherProfileModal({ isOpen, onClose }) {
             </div>
 
             <div className="profile-footer-actions">
-              <Button variant="outline" size="md" type="button" onClick={() => setIsEditing(false)}>
+              <Button
+                variant="outline"
+                size="md"
+                onClick={() => setIsEditing(false)}
+              >
                 रद्द करें (Cancel)
               </Button>
-              <Button variant="primary" size="md" type="submit" icon={<span>💾</span>}>
+              <Button
+                type="submit"
+                variant="primary"
+                size="md"
+                icon={<span>💾</span>}
+              >
                 सहेजें (Save Changes)
               </Button>
             </div>

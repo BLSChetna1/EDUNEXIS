@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import PageHeader from "../components/PageHeader";
 import Button from "../components/Button";
-import { ROUTES, SUPPORTED_LANGUAGES, PRIMARY_GRADES } from "../utils/constants";
+import { ROUTES, SUPPORTED_LANGUAGES, PRIMARY_GRADES, SUBJECTS } from "../utils/constants";
 import lessonService from "../services/lessonService";
 
 export function MyLessons() {
@@ -63,7 +63,7 @@ export function MyLessons() {
     if (found) {
       return {
         name: found.name,
-        native: found.nativeName.split("/")[0].trim(),
+        native: found.nativeName ? found.nativeName.split("/")[0].trim() : "",
         color: found.badgeColor,
       };
     }
@@ -135,9 +135,11 @@ export function MyLessons() {
               onChange={(e) => setSelectedSubject(e.target.value)}
             >
               <option value="All">All Subjects (सभी विषय)</option>
-              <option value="Environmental Studies">Environmental Studies (EVS)</option>
-              <option value="Language">Language & Literacy (भाषा)</option>
-              <option value="Mathematics">Mathematics (गणित)</option>
+              {SUBJECTS.map((sub) => (
+                <option key={sub} value={sub}>
+                  {sub}
+                </option>
+              ))}
             </select>
           </div>
 
@@ -171,7 +173,7 @@ export function MyLessons() {
               <option value="All">All Languages (सभी भाषाएं)</option>
               {SUPPORTED_LANGUAGES.map((l) => (
                 <option key={l.code} value={l.code}>
-                  {l.name} ({l.nativeName.split("/")[0].trim()})
+                  {l.name}
                 </option>
               ))}
             </select>

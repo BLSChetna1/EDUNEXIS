@@ -72,10 +72,11 @@ export function StudentLayout({ children }) {
               value={selectedLang}
               onChange={handleLanguageChange}
             >
-              <option value="sat">Santhali (ᱥᱟᱱᱛᱟᱲᱤ)</option>
-              <option value="hoc">Ho (ᱣᱟᱨᱟᱝ ᱪᱤᱛᱤ)</option>
-              <option value="unr">Mundari (ᱢᱩᱱᱰᱟᱨᱤ)</option>
-              <option value="hi">Hindi (हिन्दी)</option>
+              {SUPPORTED_LANGUAGES.map((l) => (
+                <option key={l.code} value={l.code}>
+                  {l.name}
+                </option>
+              ))}
             </select>
           </div>
 
@@ -121,13 +122,7 @@ export function StudentLayout({ children }) {
                   <div className="dropdown-menu-row">
                     <span className="row-key">Learning Medium:</span>
                     <span className="row-val">
-                      {selectedLang === "sat"
-                        ? "Santhali (संथाली)"
-                        : selectedLang === "hoc"
-                        ? "Ho (हो)"
-                        : selectedLang === "unr"
-                        ? "Mundari (मुंडारी)"
-                        : "Hindi (हिन्दी)"}
+                      {SUPPORTED_LANGUAGES.find((l) => l.code === selectedLang)?.name || "Santali"}
                     </span>
                   </div>
                   <div className="dropdown-menu-row">

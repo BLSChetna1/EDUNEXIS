@@ -42,21 +42,12 @@ export function Navbar({ variant = "public" }) {
           <OfflineIndicator />
 
           <Button
-            variant="outline"
-            size="sm"
-            onClick={() => navigate(ROUTES.STUDENT_LOGIN)}
-            icon={<span className="btn-icon">🎓</span>}
-          >
-            Student Login
-          </Button>
-
-          <Button
             variant="primary"
             size="sm"
             onClick={() => navigate(ROUTES.LOGIN)}
             icon={<span className="btn-icon">👩‍🏫</span>}
           >
-            Teacher Login
+            Teacher Portal
           </Button>
 
           {/* Mobile hamburger toggle */}
@@ -106,17 +97,6 @@ export function Navbar({ variant = "public" }) {
           </a>
           <div className="mobile-nav-cta">
             <Button
-              variant="outline"
-              fullWidth
-              style={{ marginBottom: "0.75rem" }}
-              onClick={() => {
-                setMobileMenuOpen(false);
-                navigate(ROUTES.STUDENT_LOGIN);
-              }}
-            >
-              🎓 Student Login →
-            </Button>
-            <Button
               variant="primary"
               fullWidth
               onClick={() => {
@@ -124,7 +104,7 @@ export function Navbar({ variant = "public" }) {
                 navigate(ROUTES.LOGIN);
               }}
             >
-              👩‍🏫 Teacher Login →
+              👩‍🏫 Enter Teacher Portal →
             </Button>
           </div>
         </div>
@@ -134,3 +114,4 @@ export function Navbar({ variant = "public" }) {
 }
 
 export default Navbar;
+

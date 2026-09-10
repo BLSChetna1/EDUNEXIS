@@ -254,7 +254,7 @@ export function StudentDashboard() {
           <div className="vernacular-banner-text">
             <h3>अपनी मातृभाषा में सीखें, आगे बढ़ें!</h3>
             <p>
-              EDUNEXIS connects classroom concepts with Santhali, Ho, and Mundari. Every child has the right to understand and excel in their own mother tongue.
+              EDUNEXIS connects classroom concepts with Santali, Ho, Mundari, Kudukh, and Khadia. Every child has the right to understand and excel in their own mother tongue.
             </p>
           </div>
           <button

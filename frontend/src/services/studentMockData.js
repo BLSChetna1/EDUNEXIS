@@ -11,8 +11,8 @@ export const DEMO_STUDENT_PROFILE = {
   section: "A",
   rollNumber: "14",
   contactNumber: "+91 ******3210", // Masked sensitive guardian phone
-  preferredLanguage: "sat", // Santhali
-  nativeLanguageName: "Santhali (ᱥᱟᱱᱛᱟᱲᱤ)",
+  preferredLanguage: "sat", // Santali
+  nativeLanguageName: "Santali",
   avatar: "👧",
   isDemo: true,
   createdAt: "2026-06-15T09:00:00Z",
@@ -38,8 +38,8 @@ export const TOPICS_LEARNED = [
     id: "lang-story",
     topicId: "lang-story",
     title: "कहानियों को पढ़ना और समझना (Reading & Understanding Stories)",
-    subject: "Language",
-    subjectHindi: "भाषा / संथाली-हिंदी",
+    subject: "Santali",
+    subjectHindi: "संताली",
     category: "Language",
     summary: "संथाली लोककथा 'चांदो और तितली' को अपनी मातृभाषा और हिंदी में धाराप्रवाह पढ़ना और नए शब्द सीखना।",
     date: "2 days ago",
@@ -53,7 +53,7 @@ export const TOPICS_LEARNED = [
     id: "evs-trees",
     topicId: "evs-trees",
     title: "हमारे आस-पास के पेड़-पौधे (Plants & Trees Around Us)",
-    subject: "Environmental Studies",
+    subject: "Environmental Studies (EVS)",
     subjectHindi: "पर्यावरण अध्ययन (EVS)",
     category: "EVS",
     summary: "साल (सखुआ), महुआ और करंज के पेड़ों की पहचान, उनके पत्तों के आकार और वन-संरक्षण का महत्व।",
@@ -101,8 +101,8 @@ export const TODAYS_TOPICS = [
     id: "lang-sentences",
     topicId: "lang-sentences",
     title: "सरल वाक्य रचना (Simple Sentence Formation)",
-    subject: "Language",
-    subjectHindi: "भाषा / संथाली-हिंदी",
+    subject: "Santali",
+    subjectHindi: "संताली",
     category: "Language",
     summary: "चित्र देखकर छोटे-छोटे वाक्य बनाना और नए संथाली-हिंदी शब्दों का अपनी बातचीत में प्रयोग करना।",
     teacher: "Sunita Murmu",
@@ -131,7 +131,7 @@ export const UPCOMING_TOPICS = [
     id: "evs-animals",
     topicId: "evs-animals",
     title: "हमारे घरेलू और जंगली जानवर (Animals Around Us)",
-    subject: "Environmental Studies",
+    subject: "Environmental Studies (EVS)",
     subjectHindi: "पर्यावरण अध्ययन (EVS)",
     category: "EVS",
     summary: "जंगल के हाथी, हिरण और घर की गाय-बकरी के रहन-सहन और उनकी आवाजों को पहचानना।",
@@ -142,9 +142,9 @@ export const UPCOMING_TOPICS = [
   {
     id: "lang-riddles",
     topicId: "lang-riddles",
-    title: "संथाली और हिंदी में शब्द पहेलियां (Word Riddles in Mother Tongue)",
-    subject: "Language",
-    subjectHindi: "भाषा / संथाली-हिंदी",
+    title: "संताली और हिंदी में शब्द पहेलियां (Word Riddles in Mother Tongue)",
+    subject: "Santali",
+    subjectHindi: "संताली",
     category: "Language",
     summary: "पारंपरिक बुझौवल और पहेलियों के माध्यम से शब्द भंडार और सोच-समझ की शक्ति बढ़ाना।",
     plannedDate: "Friday",
@@ -157,6 +157,104 @@ export const SYLLABUS_DATA = {
   "Class 3": {
     meta: "Class 3 Primary Syllabus (Aligned with NEP 2020 & FLN Foundational Stage)",
     subjects: [
+      {
+        id: "tribal-lang",
+        name: "Santali (संताली)",
+        icon: "🗣️",
+        color: "#C85A32",
+        description: "Bilingual phonemic awareness, Ol Chiki script familiarity, vocabulary enrichment, and story reading.",
+        units: [
+          {
+            unitNumber: "Unit 1",
+            title: "Letters & Sounds (वर्ण एवं ध्वनियाँ)",
+            completed: 2,
+            total: 2,
+            topics: [
+              { name: "हिंदी वर्णमाला और संथाली ओल चिकि परिचय (Alphabet Mapping)", status: "completed" },
+              { name: "समान ध्वनियों की पहचान (Phonics & Sound Blends)", status: "completed" },
+            ],
+          },
+          {
+            unitNumber: "Unit 2",
+            title: "Words & Vocabulary (शब्द एवं शब्द भंडार)",
+            completed: 2,
+            total: 3,
+            topics: [
+              { name: "परिवार और घर के शब्द (Family & Household Words)", status: "completed" },
+              { name: "कहानियों को पढ़ना और समझना (Reading Stories)", status: "completed", topicId: "lang-story" },
+              { name: "सरल वाक्य रचना (Simple Sentence Formation)", status: "in-progress", topicId: "lang-sentences" },
+            ],
+          },
+          {
+            unitNumber: "Unit 3",
+            title: "Folklore, Poetry & Songs (लोककथाएँ एवं बालगीत)",
+            completed: 0,
+            total: 2,
+            topics: [
+              { name: "संथाली और हिंदी में शब्द पहेलियां (Word Riddles in Mother Tongue)", status: "upcoming", topicId: "lang-riddles" },
+              { name: "बाहा और सोहराय पर्व के बालगीत (Festival Rhymes)", status: "upcoming" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "hindi",
+        name: "Hindi (हिंदी)",
+        icon: "📖",
+        color: "#7B2CBF",
+        description: "Standard Hindi reading comprehension, grammar bridge, and creative expression.",
+        units: [
+          {
+            unitNumber: "Unit 1",
+            title: "Reading & Pronunciation (पठन एवं उच्चारण)",
+            completed: 2,
+            total: 2,
+            topics: [
+              { name: "सरल गद्यांश पठन (Simple Prose Reading)", status: "completed" },
+              { name: "मात्राओं का सही प्रयोग (Correct Vowel Diacritics)", status: "completed" },
+            ],
+          },
+          {
+            unitNumber: "Unit 2",
+            title: "Grammar Basics (बुनियादी व्याकरण)",
+            completed: 1,
+            total: 2,
+            topics: [
+              { name: "संज्ञा और नाम वाले शब्द (Nouns)", status: "completed" },
+              { name: "वचन: एक और अनेक (Singular & Plural)", status: "upcoming" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "english",
+        name: "English (अंग्रेज़ी)",
+        icon: "🔤",
+        color: "#D97706",
+        description: "Basic oral English vocabulary, sight words, and everyday greetings.",
+        units: [
+          {
+            unitNumber: "Unit 1",
+            title: "Greetings & Action Words (अभिवादन एवं क्रियाएँ)",
+            completed: 2,
+            total: 2,
+            topics: [
+              { name: "Good Morning & Polite Words", status: "completed" },
+              { name: "Colors, Shapes & Everyday Objects", status: "completed" },
+            ],
+          },
+          {
+            unitNumber: "Unit 2",
+            title: "Phonics & Rhymes (ध्वनि एवं बालगीत)",
+            completed: 0,
+            total: 2,
+            topics: [
+              { name: "Simple 3-Letter CVC Words (Cat, Sun, Pot)", status: "upcoming" },
+              { name: "Action Rhymes with Hand Claps", status: "upcoming" },
+            ],
+          },
+        ],
+      },
       {
         id: "math",
         name: "Mathematics (गणित)",
@@ -210,48 +308,8 @@ export const SYLLABUS_DATA = {
         ],
       },
       {
-        id: "lang",
-        name: "Language & Vernacular Bridge (भाषा एवं संथाली)",
-        icon: "📖",
-        color: "#C85A32",
-        description: "Bilingual phonemic awareness, Ol Chiki script familiarity, vocabulary enrichment, and story reading.",
-        units: [
-          {
-            unitNumber: "Unit 1",
-            title: "Letters & Sounds (वर्ण एवं ध्वनियाँ)",
-            completed: 2,
-            total: 2,
-            topics: [
-              { name: "हिंदी वर्णमाला और संथाली ओल चिकि परिचय (Alphabet Mapping)", status: "completed" },
-              { name: "समान ध्वनियों की पहचान (Phonics & Sound Blends)", status: "completed" },
-            ],
-          },
-          {
-            unitNumber: "Unit 2",
-            title: "Words & Vocabulary (शब्द एवं शब्द भंडार)",
-            completed: 2,
-            total: 3,
-            topics: [
-              { name: "परिवार और घर के शब्द (Family & Household Words)", status: "completed" },
-              { name: "कहानियों को पढ़ना और समझना (Reading Stories)", status: "completed", topicId: "lang-story" },
-              { name: "सरल वाक्य रचना (Simple Sentence Formation)", status: "in-progress", topicId: "lang-sentences" },
-            ],
-          },
-          {
-            unitNumber: "Unit 3",
-            title: "Folklore, Poetry & Songs (लोककथाएँ एवं बालगीत)",
-            completed: 0,
-            total: 2,
-            topics: [
-              { name: "संथाली और हिंदी में शब्द पहेलियां (Word Riddles in Mother Tongue)", status: "upcoming", topicId: "lang-riddles" },
-              { name: "बाहा और सोहराय पर्व के बालगीत (Festival Rhymes)", status: "upcoming" },
-            ],
-          },
-        ],
-      },
-      {
         id: "evs",
-        name: "Environmental Studies (पर्यावरण अध्ययन)",
+        name: "Environmental Studies (EVS / पर्यावरण)",
         icon: "🌿",
         color: "#007791",
         description: "Understanding family relations, village surroundings, forest ecosystems, and health hygiene.",
@@ -295,6 +353,63 @@ export const SYLLABUS_DATA = {
     meta: "Class 1 Foundational Stage (Oral Language, Shapes & Number Sense 1-20)",
     subjects: [
       {
+        id: "tribal-lang",
+        name: "Santali (संताली)",
+        icon: "🗣️",
+        color: "#C85A32",
+        description: "Oral storytelling, listening to tribal folk rhymes, drawing and scribbling.",
+        units: [
+          {
+            unitNumber: "Unit 1",
+            title: "Oral Expression (मौखिक अभिव्यक्ति)",
+            completed: 2,
+            total: 2,
+            topics: [
+              { name: "मेरा नाम और मेरा गाँव (Self Introduction)", status: "completed" },
+              { name: "पशु-पक्षियों की आवाजें निकालना (Mimicking Animal Sounds)", status: "completed" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "hindi",
+        name: "Hindi (हिंदी)",
+        icon: "📖",
+        color: "#7B2CBF",
+        description: "Basic Hindi letters (स्वर एवं व्यंजन), listening to rhymes.",
+        units: [
+          {
+            unitNumber: "Unit 1",
+            title: "Letters & Sounds (वर्ण परिचय)",
+            completed: 2,
+            total: 2,
+            topics: [
+              { name: "अ से अः तक स्वर की पहचान", status: "completed" },
+              { name: "क से ज्ञ तक व्यंजन", status: "upcoming" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "english",
+        name: "English (अंग्रेज़ी)",
+        icon: "🔤",
+        color: "#D97706",
+        description: "Alphabet recognition A to Z and simple oral words.",
+        units: [
+          {
+            unitNumber: "Unit 1",
+            title: "Alphabet Fun",
+            completed: 1,
+            total: 2,
+            topics: [
+              { name: "Letter Recognition A to M", status: "completed" },
+              { name: "Letter Recognition N to Z", status: "upcoming" },
+            ],
+          },
+        ],
+      },
+      {
         id: "math",
         name: "Mathematics (गणित)",
         icon: "📐",
@@ -324,27 +439,8 @@ export const SYLLABUS_DATA = {
         ],
       },
       {
-        id: "lang",
-        name: "Language (भाषा)",
-        icon: "📖",
-        color: "#C85A32",
-        description: "Oral storytelling, listening to tribal folk rhymes, drawing and scribbling.",
-        units: [
-          {
-            unitNumber: "Unit 1",
-            title: "Oral Expression (मौखिक अभिव्यक्ति)",
-            completed: 2,
-            total: 2,
-            topics: [
-              { name: "मेरा नाम और मेरा गाँव (Self Introduction)", status: "completed" },
-              { name: "पशु-पक्षियों की आवाजें निकालना (Mimicking Animal Sounds)", status: "completed" },
-            ],
-          },
-        ],
-      },
-      {
         id: "evs",
-        name: "EVS (हमारा परिवेश)",
+        name: "Environmental Studies (EVS / पर्यावरण)",
         icon: "🌿",
         color: "#007791",
         description: "Identifying body parts, personal hygiene, and classroom rules.",
@@ -367,6 +463,63 @@ export const SYLLABUS_DATA = {
     meta: "Class 2 Foundational Stage (Numbers up to 99, Simple Addition & Word Recognition)",
     subjects: [
       {
+        id: "tribal-lang",
+        name: "Santali (संताली)",
+        icon: "🗣️",
+        color: "#C85A32",
+        description: "Two-letter words, simple picture sentences, bilingual songs in mother tongue.",
+        units: [
+          {
+            unitNumber: "Unit 1",
+            title: "Word Building (शब्द निर्माण)",
+            completed: 2,
+            total: 2,
+            topics: [
+              { name: "मातृभाषा में सरल शब्द पढ़ना", status: "completed" },
+              { name: "बालगीत एवं लोककथाएँ", status: "completed" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "hindi",
+        name: "Hindi (हिंदी)",
+        icon: "📖",
+        color: "#7B2CBF",
+        description: "Two and three-letter words, picture reading, and sentence creation.",
+        units: [
+          {
+            unitNumber: "Unit 1",
+            title: "शब्द एवं वाक्य रचना",
+            completed: 2,
+            total: 2,
+            topics: [
+              { name: "बिना मात्रा वाले सरल शब्द", status: "completed" },
+              { name: "चित्र देखकर वाक्य बोलना", status: "completed" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "english",
+        name: "English (अंग्रेज़ी)",
+        icon: "🔤",
+        color: "#D97706",
+        description: "Simple sight words, classroom greetings, and object names.",
+        units: [
+          {
+            unitNumber: "Unit 1",
+            title: "Sight Words & Objects",
+            completed: 1,
+            total: 2,
+            topics: [
+              { name: "Classroom Objects: Pen, Book, Bag", status: "completed" },
+              { name: "Animal Names in English", status: "upcoming" },
+            ],
+          },
+        ],
+      },
+      {
         id: "math",
         name: "Mathematics (गणित)",
         icon: "📐",
@@ -386,30 +539,11 @@ export const SYLLABUS_DATA = {
         ],
       },
       {
-        id: "lang",
-        name: "Language (भाषा)",
-        icon: "📖",
-        color: "#C85A32",
-        description: "Two-letter words, simple picture sentences, bilingual songs.",
-        units: [
-          {
-            unitNumber: "Unit 1",
-            title: "Word Building (शब्द निर्माण)",
-            completed: 2,
-            total: 2,
-            topics: [
-              { name: "सरल शब्द पढ़ना", status: "completed" },
-              { name: "मात्राओं की पहचान", status: "completed" },
-            ],
-          },
-        ],
-      },
-      {
         id: "evs",
-        name: "EVS (पर्यावरण)",
+        name: "Environmental Studies (EVS / पर्यावरण)",
         icon: "🌿",
         color: "#007791",
-        description: "Our domestic pets, local trees, and water.",
+        description: "Our domestic pets, local trees, and water sources.",
         units: [
           {
             unitNumber: "Unit 1",
@@ -428,6 +562,63 @@ export const SYLLABUS_DATA = {
   "Class 4": {
     meta: "Class 4 Preparatory Stage (Large Numbers, Fractions, Regional Geography)",
     subjects: [
+      {
+        id: "tribal-lang",
+        name: "Santali (संताली)",
+        icon: "🗣️",
+        color: "#C85A32",
+        description: "Paragraph writing, story comprehension, tribal grammar and heritage tales.",
+        units: [
+          {
+            unitNumber: "Unit 1",
+            title: "Composition & Folklore",
+            completed: 1,
+            total: 2,
+            topics: [
+              { name: "जनजातीय लोककथाओं का पठन", status: "completed" },
+              { name: "अपने गाँव पर 5 वाक्य लिखना", status: "upcoming" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "hindi",
+        name: "Hindi (हिंदी)",
+        icon: "📖",
+        color: "#7B2CBF",
+        description: "Grammar, reading comprehension, and creative writing in Hindi.",
+        units: [
+          {
+            unitNumber: "Unit 1",
+            title: "व्याकरण एवं रचना",
+            completed: 1,
+            total: 2,
+            topics: [
+              { name: "संज्ञा और सर्वनाम की समझ", status: "completed" },
+              { name: "कहानी से प्रश्नोत्तर लिखना", status: "upcoming" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "english",
+        name: "English (अंग्रेज़ी)",
+        icon: "🔤",
+        color: "#D97706",
+        description: "Sentence reading, opposite words, and simple paragraph understanding.",
+        units: [
+          {
+            unitNumber: "Unit 1",
+            title: "Sentences & Opposites",
+            completed: 1,
+            total: 2,
+            topics: [
+              { name: "Opposite Words (Big/Small, Hot/Cold)", status: "completed" },
+              { name: "Reading Short Stories in English", status: "upcoming" },
+            ],
+          },
+        ],
+      },
       {
         id: "math",
         name: "Mathematics (गणित)",
@@ -449,27 +640,8 @@ export const SYLLABUS_DATA = {
         ],
       },
       {
-        id: "lang",
-        name: "Language (भाषा)",
-        icon: "📖",
-        color: "#C85A32",
-        description: "Paragraph writing, story comprehension, Hindi-tribal grammar comparison.",
-        units: [
-          {
-            unitNumber: "Unit 1",
-            title: "Composition & Grammar",
-            completed: 1,
-            total: 2,
-            topics: [
-              { name: "संज्ञा और सर्वनाम की समझ", status: "completed" },
-              { name: "अपने गाँव पर 5 वाक्य लिखना", status: "upcoming" },
-            ],
-          },
-        ],
-      },
-      {
         id: "evs",
-        name: "EVS (पर्यावरण)",
+        name: "Environmental Studies (EVS / पर्यावरण)",
         icon: "🌿",
         color: "#007791",
         description: "Rivers of Jharkhand, mineral resources, and tribal craft heritage.",
@@ -492,6 +664,63 @@ export const SYLLABUS_DATA = {
     meta: "Class 5 Preparatory Stage (Bridge to Upper Primary Curriculum)",
     subjects: [
       {
+        id: "tribal-lang",
+        name: "Santali (संताली)",
+        icon: "🗣️",
+        color: "#C85A32",
+        description: "Advanced literature, indigenous poetry, and cultural history in mother tongue.",
+        units: [
+          {
+            unitNumber: "Unit 1",
+            title: "Literature & Culture",
+            completed: 2,
+            total: 2,
+            topics: [
+              { name: "बिरसा मुंडा की जीवनी (मातृभाषा में)", status: "completed" },
+              { name: "पारंपरिक गीत एवं कविताएँ", status: "completed" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "hindi",
+        name: "Hindi (हिंदी)",
+        icon: "📖",
+        color: "#7B2CBF",
+        description: "Essay writing, proverbs, idioms, and advanced comprehension.",
+        units: [
+          {
+            unitNumber: "Unit 1",
+            title: "साहित्य एवं व्याकरण",
+            completed: 2,
+            total: 2,
+            topics: [
+              { name: "मुहावरे और लोकोक्तियाँ", status: "completed" },
+              { name: "पत्र एवं निबंध लेखन", status: "completed" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "english",
+        name: "English (अंग्रेज़ी)",
+        icon: "🔤",
+        color: "#D97706",
+        description: "Simple grammar (Nouns, Verbs, Tenses), paragraph composition.",
+        units: [
+          {
+            unitNumber: "Unit 1",
+            title: "Grammar & Reading",
+            completed: 1,
+            total: 2,
+            topics: [
+              { name: "Action Verbs & Simple Present Tense", status: "completed" },
+              { name: "Comprehension Passage with Questions", status: "upcoming" },
+            ],
+          },
+        ],
+      },
+      {
         id: "math",
         name: "Mathematics (गणित)",
         icon: "📐",
@@ -512,27 +741,8 @@ export const SYLLABUS_DATA = {
         ],
       },
       {
-        id: "lang",
-        name: "Language (भाषा)",
-        icon: "📖",
-        color: "#C85A32",
-        description: "Advanced comprehension, essay writing, literary stories in Hindi & tribal languages.",
-        units: [
-          {
-            unitNumber: "Unit 1",
-            title: "Literature & Grammar",
-            completed: 2,
-            total: 2,
-            topics: [
-              { name: "बिरसा मुंडा की जीवनी", status: "completed" },
-              { name: "मुहावरे और लोकोक्तियाँ", status: "completed" },
-            ],
-          },
-        ],
-      },
-      {
         id: "evs",
-        name: "EVS (पर्यावरण)",
+        name: "Environmental Studies (EVS / पर्यावरण)",
         icon: "🌿",
         color: "#007791",
         description: "Forest conservation acts, climate, weather, and science basics.",
@@ -687,8 +897,8 @@ export const TOPIC_DETAILS_MAP = {
   "lang-story": {
     id: "lang-story",
     title: "कहानियों को पढ़ना और समझना (Reading Stories)",
-    subject: "Language",
-    subjectHindi: "भाषा / संथाली-हिंदी",
+    subject: "Santali",
+    subjectHindi: "संताली",
     grade: "Class 3",
     readTime: "10 mins read",
     badgeColor: "#C85A32",
@@ -752,7 +962,7 @@ export const TOPIC_DETAILS_MAP = {
   "evs-trees": {
     id: "evs-trees",
     title: "हमारे आस-पास के पेड़-पौधे (Plants & Trees Around Us)",
-    subject: "Environmental Studies",
+    subject: "Environmental Studies (EVS)",
     subjectHindi: "पर्यावरण अध्ययन (EVS)",
     grade: "Class 3",
     readTime: "7 mins read",

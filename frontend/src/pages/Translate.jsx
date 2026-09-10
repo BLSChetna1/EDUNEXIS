@@ -4,6 +4,7 @@ import Button from "../components/Button";
 import { useAuth } from "../hooks/useAuth";
 import { SUPPORTED_LANGUAGES } from "../utils/constants";
 import { CLASSROOM_QUICK_PHRASES } from "../services/mockData";
+import apiService from "../services/api";
 
 export function Translate() {
   const { user } = useAuth();
@@ -11,6 +12,14 @@ export function Translate() {
   const [inputText, setInputText] = useState("आज हम सब मिलकर जंगल के सुंदर पेड़ों के बारे में जानेंगे।");
   const [isTranslating, setIsTranslating] = useState(false);
   const [copied, setCopied] = useState(false);
+  const [isPlayingAudio, setIsPlayingAudio] = useState(false);
+
+  // Active translation state
+  const [translatedData, setTranslatedData] = useState({
+    script: "ᱛᱮᱦᱮᱧ ᱵᱚ ᱥᱟᱱᱟᱢ ᱠᱚ ᱢᱮᱥᱟ ᱠᱟᱛᱮ ᱵᱤᱨ ᱨᱮᱱᱟᱜ ᱪᱚᱨᱚᱠ ᱫᱟᱨᱮ ᱠᱚ ᱵᱟᱵᱚᱛ ᱵᱚ ᱵᱟᱰᱟᱭᱟ᱾",
+    devanagari: "तेहेञ बो सनाम को मेसा काते बीर रेनाग चोरॉक दारे को बाबत बो बाड़ाया।",
+    phonetic: "Tehenj bo sanam ko mesa kate bir renag chorok dare ko babot bo badaya",
+  });
 
   const currentLang =
     SUPPORTED_LANGUAGES.find((l) => l.code === selectedTargetLang) ||
@@ -35,17 +44,65 @@ export function Translate() {
     },
   ];
 
-  const handleTranslate = () => {
+  const handleTranslate = async () => {
+    if (!inputText.trim()) return;
     setIsTranslating(true);
-    setTimeout(() => {
+    try {
+      const res = await apiService.translateText(inputText, "hi", selectedTargetLang);
+      if (res) {
+        setTranslatedData({
+          script: res.translated_text || res.original_text,
+          devanagari: res.devanagari_transliteration || res.translated_text,
+          phonetic: res.phonetic_guide || "",
+        });
+      }
+    } catch {
+      // Local fallback lookup
+      const sample = CLASSROOM_QUICK_PHRASES[0].translations[selectedTargetLang] || CLASSROOM_QUICK_PHRASES[0].translations.sat;
+      setTranslatedData({
+        script: sample.script,
+        devanagari: sample.devanagari,
+        phonetic: sample.audioText,
+      });
+    } finally {
       setIsTranslating(false);
-    }, 400);
+    }
+  };
+
+  const handleLanguageChange = (e) => {
+    const newLang = e.target.value;
+    setSelectedTargetLang(newLang);
+    const sample = CLASSROOM_QUICK_PHRASES[0].translations[newLang] || CLASSROOM_QUICK_PHRASES[0].translations.sat;
+    setTranslatedData({
+      script: sample.script,
+      devanagari: sample.devanagari,
+      phonetic: sample.audioText,
+    });
   };
 
   const handleCopy = (text) => {
     navigator.clipboard?.writeText(text);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
+  };
+
+  const handlePlayAudio = () => {
+    setIsPlayingAudio(true);
+    if ("speechSynthesis" in window && translatedData.devanagari) {
+      try {
+        window.speechSynthesis.cancel();
+        const utterance = new SpeechSynthesisUtterance(translatedData.devanagari);
+        utterance.lang = "hi-IN";
+        utterance.rate = 0.85;
+        utterance.onend = () => setIsPlayingAudio(false);
+        utterance.onerror = () => setIsPlayingAudio(false);
+        window.speechSynthesis.speak(utterance);
+      } catch {
+        setTimeout(() => setIsPlayingAudio(false), 2000);
+      }
+    } else {
+      setTimeout(() => setIsPlayingAudio(false), 2000);
+    }
   };
 
   return (
@@ -119,19 +176,19 @@ export function Translate() {
             <div className="translate-card-header">
               <div className="lang-indicator">
                 <span className="lang-flag">🌱</span>
-                <strong>Target: {currentLang.name} ({currentLang.nativeName})</strong>
+                <strong>{currentLang.name} (मातृभाषा अनुवाद)</strong>
               </div>
 
               {/* Target Language Dropdown */}
               <select
                 className="target-lang-select"
                 value={selectedTargetLang}
-                onChange={(e) => setSelectedTargetLang(e.target.value)}
+                onChange={handleLanguageChange}
                 aria-label="Select target language"
               >
                 {SUPPORTED_LANGUAGES.map((l) => (
                   <option key={l.code} value={l.code}>
-                    {l.name} ({l.script})
+                    {l.name}
                   </option>
                 ))}
               </select>
@@ -141,23 +198,25 @@ export function Translate() {
               <div className="script-display-box">
                 <span className="script-name-tag">Native Script ({currentLang.script}):</span>
                 <p className="script-primary-text font-ol-chiki">
-                  ᱛᱮᱦᱮᱧ ᱵᱚ ᱥᱟᱱᱟᱢ ᱠᱚ ᱢᱮᱥᱟ ᱠᱟᱛᱮ ᱵᱤᱨ ᱨᱮᱱᱟᱜ ᱪᱚᱨᱚᱠ ᱫᱟᱨᱮ ᱠᱚ ᱵᱟᱵᱚᱛ ᱵᱚ ᱵᱟᱰᱟᱭᱟ᱾
+                  {translatedData.script}
                 </p>
               </div>
 
               <div className="script-display-box devanagari-variant">
                 <span className="script-name-tag">देवनागरी रूप (Devanagari Transliteration):</span>
                 <p className="script-secondary-text font-devanagari">
-                  तेहेञ बो सनाम को मेसा काते बीर रेनाग चोरॉक दारे को बाबत बो बाड़ाया।
+                  {translatedData.devanagari}
                 </p>
               </div>
 
-              <div className="phonetic-strip">
-                <span className="phonetic-guide-label">Phonetic Speech Guide:</span>
-                <span className="phonetic-guide-val">
-                  "Tehenj bo sanam ko mesa kate bir renag chorok dare ko babot bo badaya"
-                </span>
-              </div>
+              {translatedData.phonetic && (
+                <div className="phonetic-strip">
+                  <span className="phonetic-guide-label">Phonetic Speech Guide:</span>
+                  <span className="phonetic-guide-val">
+                    "{translatedData.phonetic}"
+                  </span>
+                </div>
+              )}
             </div>
 
             <div className="translate-card-footer">
@@ -165,7 +224,7 @@ export function Translate() {
                 <Button
                   variant="outline"
                   size="sm"
-                  onClick={() => handleCopy("ᱛᱮᱦᱮᱧ ᱵᱚ ᱥᱟᱱᱟᱢ ᱠᱚ ᱢᱮᱥᱟ ᱠᱟᱛᱮ ᱵᱤᱨ ᱨᱮᱱᱟᱜ ᱪᱚᱨᱚᱠ ᱫᱟᱨᱮ ᱠᱚ ᱵᱟᱵᱚᱛ ᱵᱚ ᱵᱟᱰᱟᱭᱟ᱾")}
+                  onClick={() => handleCopy(translatedData.script)}
                   icon={<span>📋</span>}
                 >
                   {copied ? "Copied! ✓" : "Copy Translation"}
@@ -174,24 +233,15 @@ export function Translate() {
                 <Button
                   variant="secondary"
                   size="sm"
+                  onClick={handlePlayAudio}
+                  disabled={isPlayingAudio}
                   icon={<span>🔊</span>}
                 >
-                  Listen Audio
+                  {isPlayingAudio ? "Playing..." : "Listen Audio"}
                 </Button>
               </div>
               <span className="sync-status-tag">Ready for Offline Save</span>
             </div>
-          </div>
-        </div>
-
-        {/* Backend Endpoint Documentation Note */}
-        <div className="backend-ready-notice">
-          <div className="notice-icon">⚙️</div>
-          <div className="notice-content">
-            <strong>FastAPI Translation Pipeline:</strong>
-            <p>
-              Mapped to <code>POST /api/v1/translate</code>. Accepts <code>text</code>, <code>source_language</code>, and <code>target_language</code>. Ready for AI Engine team (Member 3) translation models.
-            </p>
           </div>
         </div>
       </div>
@@ -200,3 +250,4 @@ export function Translate() {
 }
 
 export default Translate;
+

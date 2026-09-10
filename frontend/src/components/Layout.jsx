@@ -69,7 +69,7 @@ export function Layout({ children }) {
               >
                 {SUPPORTED_LANGUAGES.map((lang) => (
                   <option key={lang.code} value={lang.code}>
-                    {lang.name} ({lang.script})
+                    {lang.name}
                   </option>
                 ))}
               </select>
@@ -98,8 +98,6 @@ export function Layout({ children }) {
         <footer className="dashboard-footer">
           <div className="footer-meta-row">
             <span>EDUNEXIS — AI-Powered Vernacular Education</span>
-            <span className="footer-bullet">•</span>
-            <span>Target: {currentLangObj.name} ({currentLangObj.nativeName})</span>
             <span className="footer-bullet">•</span>
             <span>Breaking language barriers. Enabling every child to learn.</span>
           </div>

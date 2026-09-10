@@ -25,6 +25,16 @@ export const CLASSROOM_QUICK_PHRASES = [
         devanagari: "सोबेन होनको दुब पे आर आपनाग पुथी उबुल पे।",
         audioText: "Soben honko dub pe aar apnag puthi ubul pe",
       },
+      kru: {
+        script: "ᱡᱚᱛᱚ ᱠᱩᱲᱩᱠᱷ",
+        devanagari: "हुरमी ख़दखर उक्का आर तंग्है पुथी तिंघा।",
+        audioText: "Hurmi khadkhar ukka aar tanghai puthi tingha",
+      },
+      kha: {
+        script: "ᱥᱟᱱᱟᱢ ᱠᱷᱟᱲᱤᱭᱟ",
+        devanagari: "सउब कुंगडूको कुल्हाय ना आपनाग पुथी उघटाय ना।",
+        audioText: "Saub kungduko kulhay na apnag puthi ughatay na",
+      },
     },
   },
   {
@@ -47,6 +57,16 @@ export const CLASSROOM_QUICK_PHRASES = [
         script: "ᱵᱮᱥ ᱜᱮ! ᱟᱢ ᱟᱹᱰᱤ ᱢᱚᱡᱽ ᱪᱤᱛᱟᱹᱨ ᱮᱢ ᱛᱮᱭᱟᱨ ᱠᱮᱫᱟ᱾",
         devanagari: "बेस गे! आम अंड़ि मोज चितạर एम तैयार केदा।",
         audioText: "Bes ge! Aam adi moj chitar em teyar keda",
+      },
+      kru: {
+        script: "ᱵᱮᱥ ᱜᱮ",
+        devanagari: "दव! नीं कोड़े नन्ना नलक कमचका रहचका।",
+        audioText: "Daw! Neen kode nanna nalak kamchaka rahcaka",
+      },
+      kha: {
+        script: "ᱥᱟᱨᱦᱟᱣ",
+        devanagari: "बेश! आम अंड़ि सुंदर छबि बेनय केदा।",
+        audioText: "Besh! Aam adi sundar chhabi benay keda",
       },
     },
   },
@@ -71,6 +91,16 @@ export const CLASSROOM_QUICK_PHRASES = [
         devanagari: "चेनाग ओकोय कुकली कुली सानांग ताना?",
         audioText: "Chenag okoy kukli kuli sanang tana?",
       },
+      kru: {
+        script: "ᱥᱟᱣᱟᱞ",
+        devanagari: "एन्ने एका नन्ना हुरमी गने सवाल मेंजना रही?",
+        audioText: "Enne eka nanna hurmi gane sawal menjna rahi?",
+      },
+      kha: {
+        script: "ᱠᱩᱠᱞᱤ",
+        devanagari: "चेनाय कोनो सवाल कुंगडूको मेंगा ना?",
+        audioText: "Chenay kono sawal kungduko menga na?",
+      },
     },
   },
   {
@@ -94,6 +124,16 @@ export const CLASSROOM_QUICK_PHRASES = [
         devanagari: "ती अं़बु केदते आपनाग थạरी रे मांडी हाताव पे।",
         audioText: "Ti abu kedte apnag thari re mandi hataw pe",
       },
+      kru: {
+        script: "ᱛᱤ ᱢᱟᱸᱰᱤ",
+        devanagari: "खेक़्खा नोऱ्आ आर तंग्है थाली नू मंडी ओना।",
+        audioText: "Khekha nor'a aar tanghai thali nu mandi ona",
+      },
+      kha: {
+        script: "ᱛᱤ ᱫᱟᱠᱟ",
+        devanagari: "ती धोय के आपनाग थरिया ते मध्याह्न भोजन लेय ना।",
+        audioText: "Ti dhoy ke apnag thariya te madhyahn bhojan ley na",
+      },
     },
   },
 ];
@@ -109,6 +149,8 @@ export const MOCK_FLASHCARDS = [
     sat: { script: "ᱦᱟᱹᱛᱤ", devanagari: "हạती", phonetic: "Hati" },
     hoc: { script: "ᱦᱟᱹᱛᱤ", devanagari: "हạती", phonetic: "Hati" },
     unr: { script: "ᱦᱟᱹᱛᱤ", devanagari: "हạती", phonetic: "Hati" },
+    kru: { script: "ᱦᱟᱹᱛᱤ", devanagari: "हत्थी / हाथी", phonetic: "Hathi" },
+    kha: { script: "ᱦᱟᱹᱛᱤ", devanagari: "हाथी", phonetic: "Hathi" },
     fact: "झारखंड का राजकीय पशु (State Animal of Jharkhand)",
   },
   {
@@ -121,6 +163,8 @@ export const MOCK_FLASHCARDS = [
     sat: { script: "ᱥᱟᱨᱡᱚᱢ ᱫᱟᱨᱮ", devanagari: "सारजोम दारे", phonetic: "Sarjom Dare" },
     hoc: { script: "ᱥᱟᱨᱡᱚᱢ ᱫᱟᱨᱩ", devanagari: "सारजोम दारू", phonetic: "Sarjom Daru" },
     unr: { script: "ᱥᱟᱨᱡᱚᱢ ᱫᱟᱨᱩ", devanagari: "सारजोम दारू", phonetic: "Sarjom Daru" },
+    kru: { script: "ᱥᱟᱨᱡᱚᱢ", devanagari: "सखुआ / मन्न", phonetic: "Mann" },
+    kha: { script: "ᱥᱟᱨᱡᱚᱢ", devanagari: "सखुआ / दारू", phonetic: "Daru" },
     fact: "सरहुल पर्व में पूजनीय पवित्र वृक्ष (Revered in Sarhul festival)",
   },
   {
@@ -133,6 +177,8 @@ export const MOCK_FLASHCARDS = [
     sat: { script: "ᱫᱟᱜ", devanagari: "दाग", phonetic: "Daah" },
     hoc: { script: "ᱫᱟᱜ", devanagari: "दाग", phonetic: "Daa" },
     unr: { script: "ᱫᱟᱜ", devanagari: "दाग", phonetic: "Daah" },
+    kru: { script: "ᱫᱟᱜ", devanagari: "अम्म (Amma)", phonetic: "Amm" },
+    kha: { script: "ᱫᱟᱜ", devanagari: "दाअ् (Daa)", phonetic: "Daa" },
     fact: "जीवन का आधार — प्राथमिक विज्ञान संप्रत्यय",
   },
   {
@@ -145,6 +191,8 @@ export const MOCK_FLASHCARDS = [
     sat: { script: "ᱢᱚᱬᱮ (᱕)", devanagari: "मोणे (५)", phonetic: "Mone" },
     hoc: { script: "ᱢᱚᱬᱮᱭᱟ (᱕)", devanagari: "मोणेया (५)", phonetic: "Moneya" },
     unr: { script: "ᱢᱚᱬᱮ (᱕)", devanagari: "मोणे (५)", phonetic: "Mone" },
+    kru: { script: "ᱢᱚᱬᱮ", devanagari: "पंचे (५)", phonetic: "Panche" },
+    kha: { script: "ᱢᱚᱬᱮ", devanagari: "मोलोय (५)", phonetic: "Moloy" },
     fact: "बुनियादी संख्या ज्ञान (FLN Competency)",
   },
   {
@@ -157,6 +205,8 @@ export const MOCK_FLASHCARDS = [
     sat: { script: "ᱵᱩᱰᱷᱤ ᱟᱭᱳ", devanagari: "बुढी आयो", phonetic: "Budhi Aayo" },
     hoc: { script: "ᱡᱤᱭᱟᱹ", devanagari: "जीया", phonetic: "Jiya" },
     unr: { script: "ᱟᱡᱤ", devanagari: "आजी", phonetic: "Aaji" },
+    kru: { script: "ᱵᱩᱰᱷᱤ", devanagari: "बड्डी / आजी", phonetic: "Baddi" },
+    kha: { script: "ᱵᱩᱰᱷᱤ", devanagari: "आजी / बूढ़ी", phonetic: "Aaji" },
     fact: "पारंपरिक लोककथाओं की स्रोत (Storyteller in tribal home)",
   },
   {
@@ -169,6 +219,8 @@ export const MOCK_FLASHCARDS = [
     sat: { script: "ᱯᱩᱛᱷᱤ", devanagari: "पुथी", phonetic: "Puthi" },
     hoc: { script: "ᱯᱩᱛᱷᱤ", devanagari: "पुथी", phonetic: "Puthi" },
     unr: { script: "ᱯᱩᱛᱷᱤ", devanagari: "पुथी", phonetic: "Puthi" },
+    kru: { script: "ᱯᱩᱛᱷᱤ", devanagari: "पुथी", phonetic: "Puthi" },
+    kha: { script: "ᱯᱩᱛᱷᱤ", devanagari: "पुथी", phonetic: "Puthi" },
     fact: "कक्षा में सीखने की साथी सामग्री",
   },
 ];
@@ -176,9 +228,9 @@ export const MOCK_FLASHCARDS = [
 export const MOCK_LESSON_PLAN = {
   title: "जंगल के पेड़ और हमारे मित्र (Forest Trees & Our Friends)",
   grade: "Class 2",
-  subject: "Environmental Studies (EVS / Paryavaran)",
+  subject: "Environmental Studies (EVS)",
   duration: "40 Minutes",
-  targetLanguage: "Santhali (ᱥᱟᱱᱛᱟᱲᱤ)",
+  targetLanguage: "Santali",
   flnCompetency: "FLN-EVS-02: Local flora identification and vocabulary building in mother tongue",
   learningObjectives: [
     "Identify 3 native forest trees of Jharkhand (Sal, Mahua, Kendu).",
@@ -197,13 +249,13 @@ export const MOCK_LESSON_PLAN = {
     {
       step: 1,
       name: "Warm-up & Icebreaker (10 mins)",
-      teacherAction: "Teacher points to the Sal tree outside the classroom window and asks in Hindi: 'यह कौन सा पेड़ है?'. Teacher then plays the Santhali audio prompt: 'ᱱᱚᱣᱟ ᱫᱚ ᱪᱮᱫ ᱫᱟᱨᱮ ᱠᱟᱱᱟ? (नोवा दो चेद दारे काना?)'.",
+      teacherAction: "Teacher points to the Sal tree outside the classroom window and asks in Hindi: 'यह कौन सा पेड़ है?'. Teacher then plays the Santali audio prompt: 'ᱱᱚᱣᱟ ᱫᱚ ᱪᱮᱫ ᱫᱟᱨᱮ ᱠᱟᱱᱟ? (नोवा दो चेद दारे काना?)'.",
       studentAction: "Students excitedly answer in their mother tongue: 'ᱥᱟᱨᱡᱚᱢ ᱫᱟᱨᱮ! (Sarjom Dare!)'.",
     },
     {
       step: 2,
       name: "Bilingual Vocabulary Mapping (15 mins)",
-      teacherAction: "Teacher shows visual flashcard of 'पत्ता' and explains that in Santhali it is 'ᱥᱟᱠᱟᱢ (साकाम)'. Students touch leaves collected from the school garden.",
+      teacherAction: "Teacher shows visual flashcard of 'पत्ता' and explains that in Santali it is 'ᱥᱟᱠᱟᱢ (साकाम)'. Students touch leaves collected from the school garden.",
       studentAction: "Students repeat the words in both languages and sketch a leaf on their slate.",
     },
     {
@@ -224,7 +276,7 @@ export const MOCK_LESSON_PLAN = {
 export const MOCK_WORKSHEET = {
   title: "कक्षा 1-2: सचित्र मिलान कार्यपत्रक (Bilingual Matching Worksheet)",
   school: "प्राथमिक विद्यालय (Jharkhand School Education)",
-  targetLanguage: "Santhali / Devanagari",
+  targetLanguage: "Santali / Devanagari",
   instructions: "बाईं ओर के हिंदी शब्दों को दाईं ओर के संथाली शब्दों और चित्रों से रेखा खींचकर मिलाइए।",
   pairs: [
     { id: 1, hindi: "सूरज (Sun)", symbol: "☀️", tribalScript: "ᱥᱤᱧ ᱪᱟᱸᱫᱚ", tribalDev: "सिञ चांदो" },
@@ -238,7 +290,7 @@ export const MOCK_WORKSHEET = {
 export const OFFLINE_PACKAGES = [
   {
     id: "pkg1",
-    title: "Class 1-3 Santhali Foundational Literacy Pack",
+    title: "Class 1-3 Santali Foundational Literacy Pack",
     category: "FLN Core",
     size: "42.4 MB",
     lessonsCount: 28,

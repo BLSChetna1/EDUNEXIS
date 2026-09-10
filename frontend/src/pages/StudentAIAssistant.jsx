@@ -12,7 +12,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { useSearchParams, useNavigate } from "react-router-dom";
-import { ROUTES } from "../utils/constants";
+import { ROUTES, SUPPORTED_LANGUAGES } from "../utils/constants";
 import { useStudentAuth } from "../hooks/useStudentAuth";
 import { studentAIService, SUGGESTED_PROMPTS } from "../services/studentAIService";
 import { TOPIC_DETAILS_MAP } from "../services/studentMockData";
@@ -142,10 +142,11 @@ export function StudentAIAssistant() {
               onChange={(e) => handleLanguageSwitch(e.target.value)}
               className="assistant-lang-select"
             >
-              <option value="sat">Santhali (ᱥᱟᱱᱛᱟᱲᱤ)</option>
-              <option value="hoc">Ho (ᱣᱟᱨᱟᱝ ᱪᱤᱛᱤ)</option>
-              <option value="unr">Mundari (ᱢᱩᱱᱰᱟᱨᱤ)</option>
-              <option value="hi">Hindi (हिन्दी)</option>
+              {SUPPORTED_LANGUAGES.map((l) => (
+                <option key={l.code} value={l.code}>
+                  {l.name}
+                </option>
+              ))}
             </select>
           </div>
         </div>

@@ -12,14 +12,6 @@ import Flashcards from "./pages/Flashcards";
 import OfflineLibrary from "./pages/OfflineLibrary";
 import MyLessons from "./pages/MyLessons";
 import LessonDetail from "./pages/LessonDetail";
-
-// Student Portal Components & Pages
-import StudentLayout from "./components/StudentLayout";
-import StudentLogin from "./pages/StudentLogin";
-import StudentDashboard from "./pages/StudentDashboard";
-import StudentSyllabus from "./pages/StudentSyllabus";
-import StudentLearningDetail from "./pages/StudentLearningDetail";
-import StudentAIAssistant from "./pages/StudentAIAssistant";
 import "./App.css";
 
 export function App() {
@@ -106,46 +98,12 @@ export function App() {
           }
         />
 
-        {/* 4. Student Portal Routes */}
-        <Route path="/student-login" element={<StudentLogin />} />
-        <Route
-          path="/student-dashboard"
-          element={
-            <StudentLayout>
-              <StudentDashboard />
-            </StudentLayout>
-          }
-        />
-        <Route
-          path="/student-syllabus"
-          element={
-            <StudentLayout>
-              <StudentSyllabus />
-            </StudentLayout>
-          }
-        />
-        <Route
-          path="/student-learning/:topicId"
-          element={
-            <StudentLayout>
-              <StudentLearningDetail />
-            </StudentLayout>
-          }
-        />
-        <Route
-          path="/student-ai-assistant"
-          element={
-            <StudentLayout>
-              <StudentAIAssistant />
-            </StudentLayout>
-          }
-        />
-
-        {/* Fallback Catch-All */}
-        <Route path="*" element={<Navigate to="/" replace />} />
+        {/* Fallback Catch-All (Redirects dead or legacy student routes back to teacher login) */}
+        <Route path="*" element={<Navigate to="/login" replace />} />
       </Routes>
     </BrowserRouter>
   );
 }
 
 export default App;
+

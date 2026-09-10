@@ -7,9 +7,10 @@ import { CLASSROOM_QUICK_PHRASES } from "../services/mockData";
 
 export function LiveClassroom() {
   const { user } = useAuth();
-  const currentLanguageCode = user?.targetLanguage || "sat";
+  const [selectedLangCode, setSelectedLangCode] = useState(user?.targetLanguage || "sat");
+
   const currentLang =
-    SUPPORTED_LANGUAGES.find((l) => l.code === currentLanguageCode) ||
+    SUPPORTED_LANGUAGES.find((l) => l.code === selectedLangCode) ||
     SUPPORTED_LANGUAGES[0];
 
   const [isListening, setIsListening] = useState(false);
@@ -17,14 +18,23 @@ export function LiveClassroom() {
   const [activePhraseId, setActivePhraseId] = useState("p1");
   const [isPlayingAudio, setIsPlayingAudio] = useState(false);
 
-  // Active translation lookup
+  // Active translation lookup based on selected tribal language
   const activeSample =
+    CLASSROOM_QUICK_PHRASES.find((p) => p.hindi === hindiInput) ||
     CLASSROOM_QUICK_PHRASES.find((p) => p.id === activePhraseId) ||
     CLASSROOM_QUICK_PHRASES[0];
 
   const translation =
-    activeSample.translations[currentLanguageCode] ||
-    activeSample.translations.sat;
+    activeSample.translations[selectedLangCode] ||
+    activeSample.translations.sat ||
+    activeSample.translations.hoc ||
+    activeSample.translations.unr ||
+    activeSample.translations.kru ||
+    activeSample.translations.kha || {
+      script: activeSample.hindi,
+      devanagari: activeSample.hindi,
+      audioText: activeSample.phonetic || activeSample.hindi,
+    };
 
   const handleMicToggle = () => {
     if (!isListening) {
@@ -44,9 +54,23 @@ export function LiveClassroom() {
 
   const handlePlayAudio = () => {
     setIsPlayingAudio(true);
-    setTimeout(() => {
-      setIsPlayingAudio(false);
-    }, 2000);
+    if ("speechSynthesis" in window && translation.devanagari) {
+      try {
+        window.speechSynthesis.cancel();
+        const utterance = new SpeechSynthesisUtterance(translation.devanagari);
+        utterance.lang = "hi-IN";
+        utterance.rate = 0.85;
+        utterance.onend = () => setIsPlayingAudio(false);
+        utterance.onerror = () => setIsPlayingAudio(false);
+        window.speechSynthesis.speak(utterance);
+      } catch {
+        setTimeout(() => setIsPlayingAudio(false), 2000);
+      }
+    } else {
+      setTimeout(() => {
+        setIsPlayingAudio(false);
+      }, 2000);
+    }
   };
 
   return (
@@ -54,7 +78,7 @@ export function LiveClassroom() {
       <PageHeader
         title="Live Classroom Voice Assistant"
         subtitle="Real-time Hindi-to-tribal-language speech translation bridge for interactive classroom communication."
-        badge={`Active Language: ${currentLang.name} (${currentLang.script.split("/")[0]})`}
+        badge={`Language: ${currentLang.name}`}
       />
 
       <div className="feature-workspace-grid">
@@ -126,10 +150,22 @@ export function LiveClassroom() {
         {/* Right Column: Live Translated Tribal Speech Output */}
         <div className="workspace-panel">
           <div className="panel-header">
-            <h2 className="panel-title">🔊 Translated Audio & Script (मातृभाषा अनुवाद)</h2>
-            <span className="panel-badge amber-badge">
-              {currentLang.name} ({currentLang.nativeName})
-            </span>
+            <h2 className="panel-title">🔊 Translated Audio &amp; Script (मातृभाषा अनुवाद)</h2>
+            <div className="panel-lang-selector-wrap">
+              <select
+                id="target-tribal-language"
+                className="live-lang-dropdown"
+                value={selectedLangCode}
+                onChange={(e) => setSelectedLangCode(e.target.value)}
+                aria-label="Select target tribal language"
+              >
+                {SUPPORTED_LANGUAGES.map((lang) => (
+                  <option key={lang.code} value={lang.code}>
+                    {lang.name}
+                  </option>
+                ))}
+              </select>
+            </div>
           </div>
 
           <div className="translation-output-card">
@@ -169,20 +205,8 @@ export function LiveClassroom() {
                 disabled={isPlayingAudio}
                 icon={<span>{isPlayingAudio ? "🔊 Playing..." : "▶️ Speak in Class"}</span>}
               >
-                {isPlayingAudio ? "उच्चारण चल रहा है..." : "कक्षा में सुनाएं (Play Native Audio)"}
+                {isPlayingAudio ? "उच्चारण चल रहा है..." : `कक्षा में सुनाएं (${currentLang.name} Native Audio)`}
               </Button>
-            </div>
-          </div>
-
-          {/* Integration readiness card */}
-          <div className="backend-ready-notice">
-            <div className="notice-icon">🔌</div>
-            <div className="notice-content">
-              <strong>API Integration Placeholder:</strong>
-              <p>
-                Connected to <code>apiService.speechToText</code> &amp; <code>apiService.textToSpeech</code>.
-                Ready for Bhashini Indic STT / TTS endpoints provided by Member 4.
-              </p>
             </div>
           </div>
         </div>
@@ -192,3 +216,4 @@ export function LiveClassroom() {
 }
 
 export default LiveClassroom;
+

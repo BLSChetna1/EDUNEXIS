@@ -23,7 +23,7 @@ export function Landing() {
     {
       icon: "🎙️",
       title: "Real-Time Classroom Voice Bridge",
-      description: "Teacher speaks in standard Hindi; EDUNEXIS translates live into spoken Santhali, Ho, or Mundari with indigenous script and clear audio pronunciation.",
+      description: "Teacher speaks in standard Hindi; EDUNEXIS translates live into spoken Santali, Ho, or Mundari with indigenous script and clear audio pronunciation.",
       badge: "Real-Time Speech",
       color: "green",
     },
@@ -136,25 +136,15 @@ export function Landing() {
               </div>
             </div>
 
-            {/* Hero Dual Portal CTAs */}
-            <div className="hero-cta-group hero-dual-portal-group">
+            {/* Hero Teacher CTAs */}
+            <div className="hero-cta-group">
               <Button
                 variant="primary"
                 size="lg"
                 onClick={() => navigate(ROUTES.LOGIN)}
                 icon={<span className="btn-icon">👩‍🏫</span>}
               >
-                Teacher Portal
-              </Button>
-
-              <Button
-                variant="secondary"
-                size="lg"
-                className="btn-student-portal-cta"
-                onClick={() => navigate(ROUTES.STUDENT_LOGIN)}
-                icon={<span className="btn-icon">🎓</span>}
-              >
-                Student Portal
+                Enter Teacher Portal
               </Button>
 
               <Button
@@ -184,8 +174,8 @@ export function Landing() {
             {/* Quick stats counter */}
             <div className="hero-stats-row">
               <div className="hero-stat-item">
-                <span className="stat-number">3+</span>
-                <span className="stat-label">Tribal Languages (Santhali, Ho, Mundari)</span>
+                <span className="stat-number">5</span>
+                <span className="stat-label">Tribal Languages (Santali, Ho, Mundari, Kudukh, Khadia)</span>
               </div>
               <div className="stat-divider"></div>
               <div className="hero-stat-item">
@@ -252,7 +242,7 @@ export function Landing() {
                 <div className="ai-flow-card flow-tribal">
                   <div className="flow-card-badge tribal-badge-header">
                     <span className="flow-badge-step">2</span>
-                    <span className="flow-badge-lang">TARGET LANGUAGE • SANTHALI (ᱥᱟᱱᱛᱟᱲᱤ)</span>
+                    <span className="flow-badge-lang">TARGET LANGUAGE • SANTHALI</span>
                     <span className="verified-tag">✓ Verified Project Demo Translation</span>
                   </div>
                   <div className="flow-speech-content">
@@ -325,7 +315,7 @@ export function Landing() {
               <div className="problem-icon">🗣️</div>
               <h3 className="problem-title">Linguistic Mismatch</h3>
               <p className="problem-desc">
-                Recruited teachers are typically fluent only in Hindi, while primary children in villages speak exclusively <strong>Santhali, Ho, or Mundari</strong> at home.
+                Recruited teachers are typically fluent only in Hindi, while primary children in villages speak exclusively <strong>Santali, Ho, or Mundari</strong> at home.
               </p>
               <div className="problem-stat">
                 <strong>Linguistic Disconnect:</strong> Children face a steep comprehension hurdle transitioning from their home mother tongue to an unfamiliar classroom language.
@@ -577,7 +567,7 @@ export function Landing() {
                       <span>🔋 94%</span>
                     </div>
                     <div className="mockup-content-item">
-                      <span>📁 Santhali Class 2 EVS</span>
+                      <span>📁 Santali Class 2 EVS</span>
                       <span className="status-tag-green">Synced ✓</span>
                     </div>
                     <div className="mockup-content-item">
@@ -661,22 +651,23 @@ export function Landing() {
           </div>
 
           <div className="footer-links-col">
-            <h4 className="footer-heading">Portals &amp; Learning</h4>
+            <h4 className="footer-heading">Teacher Tools</h4>
             <ul className="footer-links-list">
               <li><button className="footer-link-btn" onClick={() => navigate(ROUTES.LOGIN)}>Teacher Portal</button></li>
-              <li><button className="footer-link-btn" onClick={() => navigate(ROUTES.STUDENT_LOGIN)}>Student Portal</button></li>
-              <li><button className="footer-link-btn" onClick={() => navigate(ROUTES.STUDENT_DASHBOARD)}>Student Dashboard</button></li>
-              <li><button className="footer-link-btn" onClick={() => navigate(ROUTES.STUDENT_AI_ASSISTANT)}>EDU AI Assistant</button></li>
+              <li><button className="footer-link-btn" onClick={() => navigate(ROUTES.DASHBOARD)}>Teacher Dashboard</button></li>
+              <li><button className="footer-link-btn" onClick={() => navigate(ROUTES.LIVE_CLASSROOM)}>Live Classroom</button></li>
+              <li><button className="footer-link-btn" onClick={() => navigate(ROUTES.OFFLINE_LIBRARY)}>Offline Library</button></li>
             </ul>
           </div>
 
           <div className="footer-links-col">
             <h4 className="footer-heading">Target Languages</h4>
             <ul className="footer-links-list">
-              <li><span>Santhali (ᱥᱟᱱᱛᱟᱲᱤ)</span></li>
-              <li><span>Ho (ᱣᱟᱨᱟᱝ ᱪᱤᱛᱤ)</span></li>
-              <li><span>Mundari (ᱢᱩᱱᱰᱟᱨᱤ)</span></li>
-              <li><span>Kurukh (कुड़ुख़)</span></li>
+              <li><span>Santali</span></li>
+              <li><span>Ho</span></li>
+              <li><span>Mundari</span></li>
+              <li><span>Kudukh</span></li>
+              <li><span>Khadia</span></li>
             </ul>
           </div>
         </div>

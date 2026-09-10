@@ -9,7 +9,7 @@ import authService from "./authService";
 
 const STORAGE_KEY_LESSONS = "edunexis_saved_lessons";
 
-// Authentic starter lessons for Jharkhand tribal classrooms
+/// Authentic starter lessons for Jharkhand tribal classrooms
 const INITIAL_LESSONS = [
   {
     id: "lesson-sat-evs-01",
@@ -18,7 +18,7 @@ const INITIAL_LESSONS = [
     subject: "Environmental Studies (EVS)",
     grade: "Class 2",
     targetLanguage: "sat",
-    targetLanguageName: "Santhali (ᱥᱟᱱᱛᱟᱲᱤ)",
+    targetLanguageName: "Santali",
     duration: "40 Minutes",
     flnCompetency: "FLN-EVS-02: Local flora identification and vocabulary building in mother tongue",
     summary: "Bilingual nature exploration lesson introducing local forest trees, leaves, and indigenous folklore.",
@@ -33,10 +33,10 @@ const INITIAL_LESSONS = [
     id: "lesson-hoc-math-02",
     teacherId: "JH-EDU-1048",
     title: "बुनियादी संख्या ज्ञान १ से १० (Counting 1 to 10 in Ho)",
-    subject: "Mathematics / Ganit",
+    subject: "Mathematics",
     grade: "Class 1",
     targetLanguage: "hoc",
-    targetLanguageName: "Ho (ᱣᱟᱨᱟᱝ ᱪᱤᱛᱤ)",
+    targetLanguageName: "Ho",
     duration: "35 Minutes",
     flnCompetency: "FLN-NUM-01: One-to-one correspondence and number naming in mother tongue",
     summary: "Foundational numeracy activity utilizing tamarind seeds and pebbles to teach counting 1-10 in Ho.",
@@ -77,13 +77,45 @@ const INITIAL_LESSONS = [
     teacherInstructions: "Use concrete local objects like neem sticks, pebbles, or tamarind seeds so children connect abstract numbers to tangible items.",
   },
   {
-    id: "lesson-unr-evs-03",
+    id: "lesson-sat-lang-03",
+    teacherId: "JH-EDU-1048",
+    title: "संताली भाषा एवं वर्णमाला परिचय (Santali Alphabet & Sounds)",
+    subject: "Santali",
+    grade: "Class 1",
+    targetLanguage: "sat",
+    targetLanguageName: "Santali",
+    duration: "40 Minutes",
+    flnCompetency: "FLN-SAT-01: Foundational phonemic awareness and Ol Chiki letter recognition",
+    summary: "Oral sound recognition and letter tracing in Santali mother tongue.",
+    createdAt: new Date(Date.now() - 5 * 86400000).toISOString(),
+    updatedAt: new Date(Date.now() - 5 * 86400000).toISOString(),
+    learningObjectives: [
+      "Recognize basic Santali sounds and oral rhymes.",
+      "Match spoken Santali words with concrete pictorial cards.",
+    ],
+    steps: [
+      {
+        step: 1,
+        name: "Sound Exploration (15 mins)",
+        teacherAction: "Sing the Santali phonics song with visual charts.",
+        studentAction: "Repeat sounds aloud and point to pictures.",
+      },
+    ],
+    vocabularyBridge: [
+      { hindi: "किताब", tribal: "ᱯᱩᱛᱷᱤ (पुथी)", english: "Book" },
+      { hindi: "पेड़", tribal: "ᱫᱟᱨᱮ (दारे)", english: "Tree" },
+      { hindi: "फूल", tribal: "ᱵᱟᱦᱟ (बाहा)", english: "Flower" },
+    ],
+    teacherInstructions: "Encourage students to speak in their mother tongue without fear.",
+  },
+  {
+    id: "lesson-unr-evs-04",
     teacherId: "JH-EDU-1048",
     title: "हमारा परिवेश और जल संरक्षण (Water & Village Life in Mundari)",
     subject: "Environmental Studies (EVS)",
     grade: "Class 3",
     targetLanguage: "unr",
-    targetLanguageName: "Mundari (ᱢᱩᱱᱰᱟᱨᱤ)",
+    targetLanguageName: "Mundari",
     duration: "45 Minutes",
     flnCompetency: "FLN-EVS-05: Understanding local water sources and traditional village conservation",
     summary: "Explores village water bodies (Dari, Bandh, Joria) and traditional water conservation in Mundari culture.",
@@ -123,6 +155,70 @@ const INITIAL_LESSONS = [
     ],
     teacherInstructions: "Encourage children to share indigenous knowledge from village elders regarding how sacred groves (Sarna Sthal) protect village spring water.",
   },
+  {
+    id: "lesson-kru-lang-05",
+    teacherId: "JH-EDU-1048",
+    title: "कुड़ुख़ बालगीत और पारिवारिक रिश्ते (Kudukh Rhymes & Family Relations)",
+    subject: "Kudukh",
+    grade: "Class 2",
+    targetLanguage: "kru",
+    targetLanguageName: "Kudukh",
+    duration: "35 Minutes",
+    flnCompetency: "FLN-KRU-02: Kudukh vocabulary for family and community members",
+    summary: "Oral storytelling and vocabulary building for family terms in Kudukh.",
+    createdAt: new Date(Date.now() - 7 * 86400000).toISOString(),
+    updatedAt: new Date(Date.now() - 7 * 86400000).toISOString(),
+    learningObjectives: [
+      "Learn terms for mother, father, brother, sister in Kudukh.",
+      "Recite traditional Kudukh children's rhymes with rhythm.",
+    ],
+    steps: [
+      {
+        step: 1,
+        name: "Family Rhyme (15 mins)",
+        teacherAction: "Lead the Kudukh family rhyme with actions.",
+        studentAction: "Students join in singing and clapping.",
+      },
+    ],
+    vocabularyBridge: [
+      { hindi: "माँ", tribal: "आयो (Ayo)", english: "Mother" },
+      { hindi: "पिताजी", tribal: "बाबा (Baba)", english: "Father" },
+      { hindi: "घर", tribal: "एड़पा (Erpa)", english: "Home" },
+    ],
+    teacherInstructions: "Connect family words with everyday morning routines.",
+  },
+  {
+    id: "lesson-kha-lang-06",
+    teacherId: "JH-EDU-1048",
+    title: "खड़िया भाषा में प्रकृति और पक्षी (Nature & Birds in Khadia)",
+    subject: "Khadia",
+    grade: "Class 1",
+    targetLanguage: "kha",
+    targetLanguageName: "Khadia",
+    duration: "35 Minutes",
+    flnCompetency: "FLN-KHA-01: Identifying birds and domestic animals in Khadia",
+    summary: "Nature walk and bird identification using Khadia terminology.",
+    createdAt: new Date(Date.now() - 8 * 86400000).toISOString(),
+    updatedAt: new Date(Date.now() - 8 * 86400000).toISOString(),
+    learningObjectives: [
+      "Name 5 common local birds in Khadia.",
+      "Imitate bird sounds and create simple bilingual phrases.",
+    ],
+    steps: [
+      {
+        step: 1,
+        name: "Bird Call Listening (15 mins)",
+        teacherAction: "Ask students to listen to birds in the schoolyard.",
+        studentAction: "Name the birds in Khadia and Hindi.",
+      },
+    ],
+    vocabularyBridge: [
+      { hindi: "चिड़िया / पक्षी", tribal: "ओलोङ / चोड़े (Chode)", english: "Bird" },
+      { hindi: "पानी", tribal: "दाअ (Daa)", english: "Water" },
+      { hindi: "पेड़", tribal: "दारे (Dare)", english: "Tree" },
+    ],
+    teacherInstructions: "Use visual flashcards with bird drawings.",
+  },
 ];
 
 class LessonService {
@@ -140,7 +236,7 @@ class LessonService {
       localStorage.setItem(STORAGE_KEY_LESSONS, JSON.stringify(INITIAL_LESSONS));
       return INITIAL_LESSONS;
     } catch (err) {
-      console.error("[LessonService] Error accessing localStorage", err);
+      console.warn("localStorage read failed, falling back to mock lessons", err);
       return INITIAL_LESSONS;
     }
   }
@@ -152,32 +248,55 @@ class LessonService {
     try {
       localStorage.setItem(STORAGE_KEY_LESSONS, JSON.stringify(lessons));
     } catch (err) {
-      console.error("[LessonService] Error writing to localStorage", err);
+      console.error("localStorage write failed", err);
     }
   }
 
   /**
-   * Get lessons with optional filtering & sorting
+   * Get all lessons with optional filtering & search
    */
-  getLessons(filters = {}) {
-    const { search = "", subject = "All", grade = "All", language = "All" } = filters;
+  getLessons({ q = "", search = "", subject = "All", grade = "All", language = "All" } = {}) {
     let list = this._readStorage();
 
-    // Text search (title, summary, competency, subject)
-    if (search.trim()) {
-      const q = search.trim().toLowerCase();
+    // Text search query
+    const query = (q || search || "").toLowerCase().trim();
+    if (query) {
       list = list.filter(
         (l) =>
-          l.title.toLowerCase().includes(q) ||
-          (l.summary && l.summary.toLowerCase().includes(q)) ||
-          (l.flnCompetency && l.flnCompetency.toLowerCase().includes(q)) ||
-          (l.subject && l.subject.toLowerCase().includes(q))
+          l.title.toLowerCase().includes(query) ||
+          (l.summary && l.summary.toLowerCase().includes(query)) ||
+          (l.flnCompetency && l.flnCompetency.toLowerCase().includes(query)) ||
+          (l.subject && l.subject.toLowerCase().includes(query))
       );
     }
 
     // Subject filter
     if (subject && subject !== "All") {
-      list = list.filter((l) => l.subject && l.subject.toLowerCase().includes(subject.toLowerCase()));
+      const normSubject = subject.toLowerCase().trim();
+      list = list.filter((l) => {
+        if (!l.subject) return false;
+        const s = l.subject.toLowerCase().trim();
+        if (s === normSubject || s.includes(normSubject) || normSubject.includes(s)) return true;
+        if (normSubject.includes("environmental") || normSubject.includes("evs")) {
+          return s.includes("environmental") || s.includes("evs") || s.includes("paryavaran");
+        }
+        if (normSubject.includes("math")) {
+          return s.includes("math") || s.includes("ganit");
+        }
+        if (normSubject === "santali" || normSubject === "santhali") {
+          return s.includes("santali") || s.includes("santhali");
+        }
+        if (normSubject === "kudukh" || normSubject === "kurukh") {
+          return s.includes("kudukh") || s.includes("kurukh");
+        }
+        if (normSubject === "khadia" || normSubject === "kharia") {
+          return s.includes("khadia") || s.includes("kharia");
+        }
+        if (normSubject.includes("tribal") || normSubject.includes("local")) {
+          return s.includes("santali") || s.includes("santhali") || s.includes("ho") || s.includes("mundari") || s.includes("kudukh") || s.includes("kurukh") || s.includes("khadia") || s.includes("kharia") || s.includes("tribal") || s.includes("local");
+        }
+        return false;
+      });
     }
 
     // Grade filter
@@ -254,7 +373,7 @@ class LessonService {
   }
 
   /**
-   * Delete lesson by ID
+   * Delete lesson by ID (Deletes online/saved lesson)
    */
   deleteLesson(id) {
     const list = this._readStorage();
@@ -262,7 +381,124 @@ class LessonService {
     this._writeStorage(filtered);
     return filtered.length < list.length;
   }
+
+  // ==========================================
+  // OFFLINE STORAGE RESILIENCE & MANAGEMENT
+  // ==========================================
+
+  _readOfflineStorage() {
+    try {
+      const data = localStorage.getItem("edunexis_offline_content");
+      return data ? JSON.parse(data) : [];
+    } catch (err) {
+      console.error("[LessonService] Error reading offline storage", err);
+      return [];
+    }
+  }
+
+  _writeOfflineStorage(items) {
+    try {
+      localStorage.setItem("edunexis_offline_content", JSON.stringify(items));
+    } catch (err) {
+      console.error("[LessonService] Error writing offline storage", err);
+    }
+  }
+
+  /**
+   * Get all items saved for offline use
+   */
+  getOfflineItems() {
+    return this._readOfflineStorage();
+  }
+
+  /**
+   * Check if a specific lesson or package is downloaded for offline use
+   */
+  isItemOffline(id) {
+    const items = this._readOfflineStorage();
+    return items.some((item) => item.id === id);
+  }
+
+  /**
+   * Save an item / package / lesson for offline use
+   */
+  saveToOffline(item) {
+    const items = this._readOfflineStorage();
+    const existingIndex = items.findIndex((i) => i.id === item.id);
+    const offlinePayload = {
+      ...item,
+      downloadedAt: new Date().toISOString(),
+      offlineReady: true,
+    };
+
+    if (existingIndex !== -1) {
+      items[existingIndex] = offlinePayload;
+    } else {
+      items.push(offlinePayload);
+    }
+
+    this._writeOfflineStorage(items);
+    return offlinePayload;
+  }
+
+  /**
+   * Remove an item from offline storage ONLY.
+   * Does NOT touch the original online / saved lessons store.
+   */
+  removeFromOffline(id) {
+    const items = this._readOfflineStorage();
+    const filtered = items.filter((item) => item.id !== id);
+    this._writeOfflineStorage(filtered);
+    return true;
+  }
+
+  /**
+   * Calculate storage estimate safely
+   */
+  async getStorageEstimate() {
+    if (typeof navigator !== "undefined" && navigator.storage && navigator.storage.estimate) {
+      try {
+        const estimate = await navigator.storage.estimate();
+        const usageMB = (estimate.usage / (1024 * 1024)).toFixed(1);
+        const quotaMB = (estimate.quota / (1024 * 1024)).toFixed(0);
+        return {
+          available: true,
+          usageMB: `${usageMB} MB`,
+          quotaMB: `${quotaMB} MB`,
+          percent: estimate.quota ? Math.round((estimate.usage / estimate.quota) * 100) : 0,
+        };
+      } catch {
+        // Fallback
+      }
+    }
+
+    // LocalStorage byte calculation fallback
+    try {
+      let totalBytes = 0;
+      for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i);
+        if (key && key.startsWith("edunexis")) {
+          totalBytes += (localStorage.getItem(key) || "").length * 2;
+        }
+      }
+      const mb = (totalBytes / (1024 * 1024)).toFixed(2);
+      return {
+        available: true,
+        usageMB: `${mb} MB used`,
+        quotaMB: "50 MB",
+        percent: 5,
+      };
+    } catch {
+      return {
+        available: false,
+        usageMB: "Storage usage unavailable",
+        quotaMB: "",
+        percent: 0,
+      };
+    }
+  }
 }
 
 export const lessonService = new LessonService();
 export default lessonService;
+

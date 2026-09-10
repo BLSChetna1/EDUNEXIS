@@ -132,9 +132,10 @@ export function Dashboard() {
             <div
               className="welcome-avatar-box clickable-avatar-box"
               onClick={() => setIsProfileModalOpen(true)}
-              title="Click to view full teacher profile"
+              title="Click to choose from 15 avatars or edit profile"
             >
               <span className="welcome-avatar">{user?.avatar || "👩‍🏫"}</span>
+              <span className="avatar-edit-badge" title="Change avatar">🎨</span>
             </div>
             <div className="welcome-text-group">
               <div className="welcome-badge-line">
@@ -144,18 +145,18 @@ export function Dashboard() {
                   type="button"
                   className="edit-profile-badge-btn"
                   onClick={() => setIsProfileModalOpen(true)}
-                  title="Edit Teacher Profile"
+                  title="Change Avatar & Profile Details"
                 >
-                  ✏️ Edit Profile
+                  🎨 Change Avatar / Profile
                 </button>
               </div>
               <h1 className="welcome-heading">
-                जोहार! Welcome back, {user?.name || "Teacher"}
+                जोहार! Welcome back, <span className="teacher-welcome-avatar">{user?.avatar || "👩‍🏫"}</span> {user?.name || "Teacher"}
               </h1>
               <p className="welcome-subtext">
                 Your multilingual teaching workspace is ready. Active Classroom Mother Tongue:{" "}
                 <strong className="welcome-active-lang">
-                  {currentLanguage.name} ({currentLanguage.nativeName})
+                  {currentLanguage.name}
                 </strong>
                 {" • "}
                 <span>Script: {currentLanguage.script}</span>
@@ -195,7 +196,6 @@ export function Dashboard() {
               >
                 <span className="pill-dot"></span>
                 <span className="pill-lang-name">{lang.name}</span>
-                <span className="pill-native-name">({lang.nativeName.split("/")[0]})</span>
               </button>
             ))}
           </div>
