@@ -3,6 +3,7 @@ const {
   checkGeminiCredentials,
   generateContent,
 } = require("../services/gemini");
+const database = require("../services/database");
 
 const router = express.Router();
 
@@ -93,7 +94,7 @@ Do not include markdown or code fences.
       });
     }
 
-    res.json({
+    const response = {
       success: true,
       lessonPlan: {
         ...lessonPlan,
@@ -114,7 +115,26 @@ Do not include markdown or code fences.
         },
       },
       provider: "gemini",
-    });
+    };
+
+    try {
+      response.storage = {
+        saved: true,
+        id: database.saveLesson({
+          classLevel,
+          subject,
+          topic,
+          language,
+          title: lessonPlan.title || topic,
+          content: response.lessonPlan,
+        }),
+      };
+    } catch (databaseError) {
+      console.error("Lesson database save error:", databaseError);
+      response.storage = { saved: false };
+    }
+
+    res.json(response);
   } catch (error) {
     console.error("Lesson generation error:", error);
 

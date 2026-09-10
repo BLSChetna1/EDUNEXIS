@@ -8,6 +8,7 @@ const {
   checkGeminiCredentials,
   generateContent,
 } = require("../services/gemini");
+const database = require("../services/database");
 
 const router = express.Router();
 
@@ -35,6 +36,18 @@ router.post("/", async (req, res) => {
       });
 
       if (result.success) {
+        try {
+          database.saveTranslation({
+            sourceText: text,
+            translatedText: result.translatedText || result.translated_text || "",
+            sourceLanguage: result.sourceLanguage || sourceLanguage,
+            targetLanguage: result.targetLanguage || targetLanguage,
+            provider: result.provider || "bhashini",
+            verified: result.verified,
+          });
+        } catch (databaseError) {
+          console.error("BHASHINI translation database save error:", databaseError);
+        }
         return res.json(result);
       }
     }
@@ -84,7 +97,7 @@ Important:
 
     const translatedText = await generateContent(prompt);
 
-    res.json({
+    const response = {
       success: true,
       sourceText: text,
       translatedText: translatedText.trim(),
@@ -94,7 +107,22 @@ Important:
       verified: false,
       message:
         "Experimental AI fallback. Verified Mundari translation will use BHASHINI when access is approved.",
-    });
+    };
+
+    try {
+      database.saveTranslation({
+        sourceText: text,
+        translatedText: response.translatedText,
+        sourceLanguage,
+        targetLanguage,
+        provider: response.provider,
+        verified: response.verified,
+      });
+    } catch (databaseError) {
+      console.error("Translation database save error:", databaseError);
+    }
+
+    res.json(response);
   } catch (error) {
     console.error("Translation error:", error);
 

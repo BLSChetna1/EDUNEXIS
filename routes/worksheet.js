@@ -3,6 +3,7 @@ const {
   checkGeminiCredentials,
   generateContent,
 } = require("../services/gemini");
+const database = require("../services/database");
 
 const router = express.Router();
 
@@ -101,7 +102,7 @@ Do not invent Mundari translations.
       });
     }
 
-    res.json({
+    const response = {
       success: true,
 
       worksheet: {
@@ -125,7 +126,26 @@ Do not invent Mundari translations.
       },
 
       provider: "gemini",
-    });
+    };
+
+    try {
+      response.storage = {
+        saved: true,
+        id: database.saveWorksheet({
+          classLevel,
+          subject,
+          topic,
+          language,
+          title: worksheet.title || topic,
+          content: response.worksheet,
+        }),
+      };
+    } catch (databaseError) {
+      console.error("Worksheet database save error:", databaseError);
+      response.storage = { saved: false };
+    }
+
+    res.json(response);
   } catch (error) {
     console.error("Worksheet generation error:", error);
 

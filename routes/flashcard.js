@@ -3,6 +3,7 @@ const {
   checkGeminiCredentials,
   generateContent,
 } = require("../services/gemini");
+const database = require("../services/database");
 
 const router = express.Router();
 
@@ -98,7 +99,7 @@ Do not put explanations outside the JSON.
       });
     }
 
-    res.json({
+    const response = {
       success: true,
 
       flashcardSet: {
@@ -122,7 +123,25 @@ Do not put explanations outside the JSON.
       },
 
       provider: "gemini",
-    });
+    };
+
+    try {
+      response.storage = {
+        saved: true,
+        ids: database.saveFlashcardSet({
+          classLevel,
+          subject,
+          topic,
+          language,
+          flashcards: flashcardSet.flashcards,
+        }),
+      };
+    } catch (databaseError) {
+      console.error("Flashcard database save error:", databaseError);
+      response.storage = { saved: false };
+    }
+
+    res.json(response);
   } catch (error) {
     console.error("Flashcard generation error:", error);
 

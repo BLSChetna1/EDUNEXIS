@@ -7,6 +7,7 @@ const lessonRoute = require("./routes/lesson");
 const worksheetRoute = require("./routes/worksheet");
 const speechRoute = require("./routes/speech");
 const flashcardRoute = require("./routes/flashcard");
+const databaseRoute = require("./routes/database");
 
 const {
   checkBhashiniCredentials,
@@ -15,6 +16,8 @@ const {
 const {
   checkGeminiCredentials,
 } = require("./services/gemini");
+
+const database = require("./services/database");
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -29,11 +32,13 @@ app.use("/api/lesson", lessonRoute);
 app.use("/api/worksheet", worksheetRoute);
 app.use("/api/speech", speechRoute);
 app.use("/api/flashcard", flashcardRoute);
+app.use("/api", databaseRoute);
 
 // System status
 app.get("/api/status", (req, res) => {
   const bhashini = checkBhashiniCredentials();
   const gemini = checkGeminiCredentials();
+  const sqlite = database.getStatus();
 
   res.json({
     success: true,
@@ -42,6 +47,12 @@ app.get("/api/status", (req, res) => {
     version: "1.0.0",
 
     services: {
+      sqlite: {
+        provider: "better-sqlite3",
+        configured: sqlite.connected,
+        status: sqlite.connected ? "ready" : "unavailable",
+      },
+
       lessonGeneration: {
         provider: "Gemini",
         configured: gemini.configured,
